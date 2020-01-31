@@ -48,7 +48,7 @@ public class UtilSound : MonoBehaviour
         }
     }
 
-    public void PlaySound(string name, float volume = 1.0f, bool loop = false, bool useFamilySounds = false, bool fadeIn = false, float timeFade = 0.5f, bool bIs3D = false, GameObject o3DSoundObject = null, float f3DSoundRadius = 0.0f)
+    public void PlaySound(string name, float volume = 1.0f, bool loop = false, bool useFamilySounds = false, bool bIs3D = false, GameObject o3DSoundObject = null, float f3DSoundRadius = 0.0f)
     {
         string path = DEFAULT_SOUNDS_PATH + name;
         //AudioClip clip = Resources.Load<AudioClip>(path); // Load sound from disk
@@ -105,16 +105,6 @@ public class UtilSound : MonoBehaviour
         {
             newSource.spatialBlend = 0.0f;
             newObject.transform.parent = gameObject.transform; // UtilSound is the parent of the new object
-        }
-
-        if(fadeIn)
-        {
-            StartCoroutine(AudioFadeScript.FadeIn(newSource, timeFade));
-
-            for (int i = 0; i < sounds.Count; ++i)
-            {
-                StartCoroutine(AudioFadeScript.FadeOut(sounds[i].GetComponent<AudioSource>(), timeFade));
-            }
         }
 
         sounds.Add(newObject); // Store the new AudioSource
