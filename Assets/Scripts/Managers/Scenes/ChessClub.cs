@@ -13,6 +13,23 @@ public class ChessClub : MonoBehaviour
     public List<int> desplazamientoY;
     int currentLevel = 0;
 
+    public List<string> key1In_boy;
+    public List<string> key1Out_boy;
+    public List<string> key2In_boy;
+    public List<string> key2Out_boy;
+    public List<string> key3In_boy;
+    public List<string> key3Out_boy;
+
+    public List<string> key1In_girl;
+    public List<string> key1Out_girl;
+    public List<string> key2In_girl;
+    public List<string> key2Out_girl;
+    public List<string> key3In_girl;
+    public List<string> key3Out_girl;
+
+    private bool onTextStart = false;
+    private bool onTextEnd = false;
+
     private void Start()
     {
         EnableClickableComponent();
@@ -20,15 +37,47 @@ public class ChessClub : MonoBehaviour
 
     public void MostrarNivel(int level)
     {
+        onTextStart = true;
+
+        switch(level)
+        {
+        
+            case 0: ShowMessage(_genericManager.isBoy ? key1In_boy : key1In_girl); break;
+            case 1: ShowMessage(_genericManager.isBoy ? key2In_boy : key2In_girl); break;
+            case 2: ShowMessage(_genericManager.isBoy ? key3In_boy : key3In_girl); break;
+        }
+
         for (int i = 0; i < _clickableComponents.Count; ++i)
         {
             _clickableComponents[i].GetComponent<ClickableComponent>().enabled = false;
             _clickableComponents[i].GetComponent<ChangeMouse>().enabled = false;
             _clickableComponents[i].GetComponent<SpriteOutline>().enabled = false;
         }
-
-        _chess[currentLevel].SetActive(true);
     }
+
+    public void OnEndConversation()
+    {
+        if(onTextStart)
+        {
+            _chess[currentLevel].SetActive(true);
+            onTextStart = false;
+        }
+
+        if(onTextEnd)
+        {
+            onTextEnd = false;
+            ++currentLevel;
+            if (currentLevel < _levelMustBeWinned.Count)
+            {
+                EnableClickableComponent();
+            }
+            else
+            {
+                Debug.Log("te has pasado el nivel");
+            }
+        }
+    }
+
     private void EnableClickableComponent()
     {
         for(int i = 0;i < _clickableComponents.Count; ++i)
@@ -52,7 +101,7 @@ public class ChessClub : MonoBehaviour
             position.x += desplazamientoX[currentLevel] * go.GetComponent<SpriteRenderer>().bounds.size.x;
             position.y += desplazamientoY[currentLevel] * go.GetComponent<SpriteRenderer>().bounds.size.y;
             go.transform.position = position;
-            StartCoroutine("waitToClose");
+            StartCoroutine("WaitToClose");
         }
         else
         {
@@ -60,18 +109,29 @@ public class ChessClub : MonoBehaviour
         }
     }
 
-    IEnumerator waitToClose()
+    IEnumerator WaitToClose()
     {
         yield return new WaitForSeconds(1);
         _chess[currentLevel].SetActive(false);
-        ++currentLevel;
-        if(currentLevel < _levelMustBeWinned.Count)
+        onTextEnd = true;
+
+        switch (currentLevel)
         {
-            EnableClickableComponent();
+            case 0: ShowMessage(_genericManager.isBoy ? key1Out_boy : key1Out_girl); break;
+            case 1: ShowMessage(_genericManager.isBoy ? key2Out_boy : key2Out_girl); break;
+            case 2: ShowMessage(_genericManager.isBoy ? key3Out_boy : key3Out_girl); break;
         }
-        else
+    }
+
+    void ShowMessage(List<string> keys)
+    {
+        List<string> values = new List<string>();
+        for (int i = 0; i < keys.Count; ++i)
         {
-            Debug.Log("te has pasado el nivel");
+            Tuple<string, string> puzzle = new Tuple<string, string>("", "");
+            bool withPuzzle = false;
+            values.Add(_genericManager._localizationManager.GetString(keys[i], ref puzzle, ref withPuzzle));
         }
+        _genericManager._conversationManager.SetConversation(values);
     }
 }
