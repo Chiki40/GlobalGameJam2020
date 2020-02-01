@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterGlichScale : IGlich
 {
     public bool m_enabled = false;
-    public RectTransform m_transform;
+    public Transform m_transform;
     public bool scaleInX = false;
     public int maxScaleInX = 10;
     public bool scaleInY = false;
