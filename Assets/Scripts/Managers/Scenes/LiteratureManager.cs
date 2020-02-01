@@ -29,7 +29,6 @@ public class LiteratureManager : MonoBehaviour
     private int _actualPalabrasCorrectas = 0;
     private int _maxPalabrasCorrectas = 0;
     private bool _allPistas = false;
-    public GlichComponent[] _gliches;
 
     public List<string> _keysBoy;
     public List<string> _keysGirl;
@@ -96,18 +95,6 @@ public class LiteratureManager : MonoBehaviour
 
     private void Start()
     {
-        _numGlich = _gliches.Length / 2; // 50% de gliches
-        for (int i = 0; i < _gliches.Length; ++i)
-        {
-            if (i < _numGlich)
-            {
-                _gliches[i].glich();
-            }
-            else
-            {
-                _gliches[i].fixImage();
-            }
-        }
         _pistaConocida = new List<bool>();
         for(int i = 0;i < _pistas.Count; ++i)
         {
@@ -243,21 +230,6 @@ public class LiteratureManager : MonoBehaviour
         }
     }
 
-    private void RemoveGlich()
-    {
-        Debug.Log("quitamos un glich");
-        if (_gliches.Length == 0)
-        {
-            return;
-        }
-        --_numGlich;
-        _gliches[_numGlich].fixImage();
-        if (_numGlich <= 0)
-        {
-            Debug.Log("Todos los glich arreglados");
-        }
-    }
-
     /*
     public void PalabraIncorrecta()
     {
@@ -282,7 +254,7 @@ public class LiteratureManager : MonoBehaviour
 
         if (!_allPistas)
         {
-            CrearGlich();
+            //CrearGlich();
         }
         else
         {
@@ -290,26 +262,5 @@ public class LiteratureManager : MonoBehaviour
         }
         ShowMensaje();
     }
-    
-    private void CrearGlich()
-    {
-        Debug.Log("creamos un glich");
-        if (_gliches.Length == 0)
-        {
-            return;
-        }
-        _gliches[_numGlich].glich();
-        ++_numGlich;
-        if (_numGlich >= _gliches.Length)
-        {
-            Debug.Log("game over");
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-        }
-        else
-        {
-            
-        }
 
-    }
 }
