@@ -186,8 +186,13 @@ public class GenericManager : MonoBehaviour
         _glichManager.ReduceLevelOfGlich();
     }
 
+    public void OnLevelCompleted()
+    {
+        GameController.GetInstance().LevelCompleted();
+    }    
+
     public void OnGameOver()
     {
-
+        GameController.GetInstance().LevelGameOver();
     }
 }
