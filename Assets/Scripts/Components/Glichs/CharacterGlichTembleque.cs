@@ -9,10 +9,21 @@ public class CharacterGlichTembleque : IGlich
     public bool displamentInX = true;
     public bool displamentInY = false;
     public bool m_enabled = false;
-    public RectTransform m_transform;
+    public Transform m_transform;
     [Range(1, 10)]
     public int amountOfGlich = 1;
     private Vector3 m_originalPosition;
+
+    public void setEnable(bool enable)
+    {
+        m_enabled = enable;
+    }
+
+    public void setAmountOfGlich(int amount)
+    {
+        if (amount > 0 && amount <= 10)
+            amountOfGlich = amount;
+    }
 
     public override void fix()
     {
@@ -47,6 +58,7 @@ public class CharacterGlichTembleque : IGlich
                     m_transform.transform.position = pos;
                     yield return null;
                 }
+                m_transform.transform.position = m_originalPosition;
                 yield return new WaitForSeconds((10 - amountOfGlich) * 0.5f);
             }
             yield return null;

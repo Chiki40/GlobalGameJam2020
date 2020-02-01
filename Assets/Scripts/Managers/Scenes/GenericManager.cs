@@ -225,16 +225,20 @@ public class GenericManager : MonoBehaviour
         _glichManager.ReduceLevelOfGlich();
     }
 
-    public void OnLevelCompleted()
+    public void OnLevelCompleted(string stringKey)
     {
-        StartCoroutine(OnLevelCompletedCoroutine());
+        StartCoroutine(OnLevelCompletedCoroutine(stringKey));
     }
 
-    private IEnumerator OnLevelCompletedCoroutine()
+    private IEnumerator OnLevelCompletedCoroutine(string stringKey)
    {
        _postgameAnimator.enabled = true;
        yield return new WaitForSeconds(_postgameAnimator.GetCurrentAnimatorStateInfo(0).length);
-       _postgameText.text = "YAAAAAAY";
+
+       Tuple<string, string> tuple = new Tuple<string, string>("", "");
+       bool withoutSpecialWords = false;
+       _postgameText.text = _localizationManager.GetString(stringKey, ref tuple, ref withoutSpecialWords);
+
        _postgameTextAnimator.enabled = true;
        yield return new WaitForSeconds(_postgameTime);
        GameController.GetInstance().LevelCompleted();
