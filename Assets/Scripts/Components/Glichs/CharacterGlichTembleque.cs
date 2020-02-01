@@ -25,14 +25,13 @@ public class CharacterGlichTembleque : IGlich
             amountOfGlich = amount;
     }
 
-    public override void fix()
+    public override void glich(float levelofGlich)
     {
-
-    }
-
-    public override void glich()
-    {
-
+        setAmountOfGlich((int)levelofGlich*10);
+        if (levelofGlich > 0)
+            m_enabled = true;
+        else
+            m_enabled = false;
     }
    
     // Start is called before the first frame update

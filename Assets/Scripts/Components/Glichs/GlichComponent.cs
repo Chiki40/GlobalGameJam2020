@@ -10,12 +10,9 @@ public class GlichComponent : IGlich
     public Sprite m_fixedImage;
     private SpriteRenderer m_spriteComponent;
     private Animator m_animator;
+    [Range(1,10)]
+    public float levelOfGlichToFix = 5;
 
-    public override void fix()
-    {
-        m_spriteComponent.sprite = m_fixedImage;
-        m_animator.SetBool("fixed", true);
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -39,9 +36,10 @@ public class GlichComponent : IGlich
         
     }
 
-    public override void glich()
+    public override void glich(float level)
     {
         m_spriteComponent.sprite = m_glichImage;
-        m_animator.SetBool("fixed", false);
+        bool fix = level < levelOfGlichToFix;
+        m_animator.SetBool("fixed", fix);
     }
 }

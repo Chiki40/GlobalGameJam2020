@@ -4,6 +4,5 @@ using UnityEngine;
 
 public abstract class IGlich : MonoBehaviour
 {
-    public abstract void fix();
-    public abstract void glich();
+    public abstract void glich(float levelOfGlich);
 }
