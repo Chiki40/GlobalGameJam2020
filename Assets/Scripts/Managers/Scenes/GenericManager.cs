@@ -6,12 +6,9 @@ using UnityEngine.Events;
 
 public class GenericManager : MonoBehaviour
 {
-    [SerializeField]
-    private ConversationManager _conversationManager = null;
-    [SerializeField]
-    private LocalizationManager _localizationManager = null;
-    [SerializeField]
-    private GlichManager _glichManager = null;
+    public ConversationManager _conversationManager = null;
+    public LocalizationManager _localizationManager = null;
+    public GlichManager _glichManager = null;
 
     public UnityEvent _endConversation;
     public UnityEvent _endPartConversation;
@@ -19,14 +16,16 @@ public class GenericManager : MonoBehaviour
 
     public List<GameObject> _objectsToDeactivate;
     public List<GameObject> _pistas;
-    private List<bool> _pistaConocida;
+    private List<bool> _pistaConocida = new List<bool>();
     bool _allPistas = false;
 
     public List<string> _keysBoy;
     public List<string> _keysGirl;
 
-    private List<Pharse> phrasesBoy;
-    private List<Pharse> phrasesGirl;
+    [HideInInspector]
+    public List<Pharse> phrasesBoy = new List<Pharse>();
+    [HideInInspector]
+    public List<Pharse> phrasesGirl = new List<Pharse>();
 
     public bool isBoy = true;
 
@@ -44,6 +43,11 @@ public class GenericManager : MonoBehaviour
         {
             Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _localizationManager not set");
             return;
+        }
+
+        for(int i = 0; i < _pistas.Count; ++i)
+        {
+            _pistaConocida.Add(false);
         }
 
         //read boy keys
@@ -84,6 +88,11 @@ public class GenericManager : MonoBehaviour
             };
             phrasesGirl.Add(p);
         }
+    }
+
+    private void Start()
+    {
+        ShowMensaje();
     }
 
     public void ShowMensaje()

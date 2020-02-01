@@ -20,8 +20,8 @@ public class LocalizationManager : MonoBehaviour
         _JSONObject.TryGetValue(key, out result);
         string resultString = (string)result;
 
-        string keyStart = "<specialword>";
-        string keyEnd = "</specialword>";
+        string keyStart = "<specialWord>";
+        string keyEnd = "</specialWord>";
 
         withPalabraEspecial = false;
 

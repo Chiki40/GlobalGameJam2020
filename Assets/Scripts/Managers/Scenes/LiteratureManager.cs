@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-struct Pharse
+public struct Pharse
 {
     public string allString;
     public Tuple<string, string> puzzle;
@@ -15,6 +15,80 @@ struct Pharse
 
 public class LiteratureManager : MonoBehaviour
 {
+    public GenericManager _genericManager;
+    public TMPro.TextMeshProUGUI _textOutput;
+    public GameObject _textInput;
+    private bool inputAllreadyShow = false;
+    private int _actualPalabrasCorrectas = 0;
+
+    public void MostrarPersonaje()
+    {
+        //_genericManager.ShowMensaje();
+        _actualPalabrasCorrectas = 0;
+    }
+
+    public void EndPartConversation()
+    {
+        _textInput.SetActive(false);
+        inputAllreadyShow = false;
+    }
+
+    public void EndAllConversation()
+    {
+        int a = 2;
+        ++a;
+    }
+
+    public void CheckPalabra()
+    {
+        int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
+        InputField field = _textInput.GetComponent<InputField>();
+        string value = field.text;
+        string texto = _textOutput.text;
+
+        if (value.ToLower() == _genericManager.phrasesBoy[actualPhrase].puzzle.Item2.ToLower())
+        {
+            if (_genericManager.isBoy)
+            {
+                //la palabra esta bien
+                texto = texto.Replace(_genericManager.phrasesBoy[actualPhrase].puzzle.Item1, _genericManager.phrasesBoy[actualPhrase].puzzle.Item2.ToLower());
+                _textOutput.text = texto;
+                ++_actualPalabrasCorrectas;
+            }
+            else
+            {
+                //la palabra esta bien
+                texto = texto.Replace(_genericManager.phrasesGirl[actualPhrase].puzzle.Item1, _genericManager.phrasesGirl[actualPhrase].puzzle.Item2.ToLower());
+                _textOutput.text = texto;
+                ++_actualPalabrasCorrectas;
+            }
+        }
+        _textInput.SetActive(false);
+    }
+
+    public void pulsadoEnTexto()
+    {
+        int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
+
+        if (!inputAllreadyShow)
+        {
+            if (actualPhrase == 1)
+            {
+                _textInput.SetActive(true);
+                _textInput.GetComponent<InputField>().text = "";
+                inputAllreadyShow = true;
+            }
+
+            if (actualPhrase == 2)
+            {
+                _textInput.SetActive(true);
+                _textInput.GetComponent<InputField>().text = "";
+                inputAllreadyShow = true;
+            }
+        }
+    }
+
+    /*
     [SerializeField]
     private ConversationManager _conversationManager = null;
     [SerializeField]
@@ -106,7 +180,7 @@ public class LiteratureManager : MonoBehaviour
     public void ShowMensaje()
     {
         List<string> actualString = new List<string>();
-        
+
         if(isBoy)
         {
             for(int i = 0; i < phrasesBoy.Count; ++i)
@@ -173,7 +247,7 @@ public class LiteratureManager : MonoBehaviour
             }
             ++currentFrase;
         }
-        */
+
     }
 
     public void PistaConocida(int index)
@@ -244,7 +318,6 @@ public class LiteratureManager : MonoBehaviour
             _textInput[1].GetComponent<InputField>().text = "";
         }
     }
-    */
 
     public void PulsadoElPersonaje()
     {
@@ -262,5 +335,5 @@ public class LiteratureManager : MonoBehaviour
         }
         ShowMensaje();
     }
-
+    */
 }
