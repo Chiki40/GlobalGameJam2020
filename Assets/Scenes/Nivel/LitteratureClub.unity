@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalMouse: {fileID: 2800000, guid: 3201f8f09bec09741ad87511f4dec837, type: 3}
   _specialMouse: {fileID: 2800000, guid: 16233f6f678460a43a14ebbbd06e9a18, type: 3}
+  _spriteOutline: {fileID: 775636711}
 --- !u!114 &775636711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +545,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8751283309066409409, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -715,6 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalMouse: {fileID: 2800000, guid: 3201f8f09bec09741ad87511f4dec837, type: 3}
   _specialMouse: {fileID: 2800000, guid: 16233f6f678460a43a14ebbbd06e9a18, type: 3}
+  _spriteOutline: {fileID: 2094190748}
 --- !u!114 &2094190748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalMouse: {fileID: 2800000, guid: 3201f8f09bec09741ad87511f4dec837, type: 3}
   _specialMouse: {fileID: 2800000, guid: 16233f6f678460a43a14ebbbd06e9a18, type: 3}
+  _spriteOutline: {fileID: 0}
 --- !u!114 &2101254191
 MonoBehaviour:
   m_ObjectHideFlags: 0
