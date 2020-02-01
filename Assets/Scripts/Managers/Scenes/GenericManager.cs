@@ -17,8 +17,6 @@ public class GenericManager : MonoBehaviour
     public List<GameObject> _objectsToDeactivate;
     public List<GameObject> _pistas;
     private List<bool> _pistaConocida = new List<bool>();
-    bool _allPistas = false;
-
     public List<string> _keysBoy;
     public List<string> _keysGirl;
 
@@ -74,7 +72,7 @@ public class GenericManager : MonoBehaviour
             phrasesBoy.Add(p);
         }
 
-        for (int i = 0; i < _keysBoy.Count; ++i)
+        for (int i = 0; i < _keysGirl.Count; ++i)
         {
             Tuple<string, string> puzzle = new Tuple<string, string>("", "");
             bool withPuzzle = false;
@@ -162,13 +160,16 @@ public class GenericManager : MonoBehaviour
         _pistaConocida[index] = true;
     }
 
+    public bool AllPistasConocidas()
+    {
+        return _pistaConocida.TrueForAll(b => b == true);
+    }
+
     public void PulsadoElPersonaje()
     {
         OcultarGraficos();
 
-        _allPistas = _pistaConocida.TrueForAll(b => b == true);
-
-        if (!_allPistas)
+        if (!AllPistasConocidas())
         {
             CrearGlich();
         }
