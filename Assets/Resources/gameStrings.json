@@ -1,4 +1,8 @@
 {
-    "clave1": "Hola, <specialWord>clave1<Solution>holwiiwiiwi</solution></specialWord>, udhrunsi hubdu hudh",
-    "clave2": "Sin claves ni historias"
+	"Text1_M": "Hola, Bruto. <specialWord>JILIPO<Solution>Gilipollas</solution></specialWord>, integral como el pan",
+	"Text1_F": "Hola, Bruta. <specialWord>JILIPO<Solution>Gilipollas</solution></specialWord>, integral como el pan",
+	"Text2_M": "Sin claves ni historias,majo",
+	"Text2_F": "Sin claves ni historias,maja",
+	"Text3_M": "Hola, <specialWord>clave1<Solution>holwiiwiiwi</solution></specialWord>, udhrunsi hubdu hudh",
+	"Text3_F": "Hola, <specialWord>clave1<Solution>holwiiwiiwi</solution></specialWord>, udhrunsi hubdu hudh"
 }
