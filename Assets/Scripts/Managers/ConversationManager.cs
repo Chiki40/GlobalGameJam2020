@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ConversationManager : MonoBehaviour
@@ -15,6 +16,9 @@ public class ConversationManager : MonoBehaviour
     private int _currentConversationIndex = -1;
     private int _currentConversationShownChar = 0;
     private float _timeRemainingForNextShownChar = 0.0f;
+
+    [SerializeField]
+    private UnityEvent _endCallback;
 
     private void Awake()
     {
@@ -33,7 +37,6 @@ public class ConversationManager : MonoBehaviour
 
     public void SetConversation(List<string> conversationTexts)
     {
-        Debug.Log("lolazo");
         if (_dialogTextBox != null)
         {
             _dialogTextBox.gameObject.SetActive(true);
@@ -48,6 +51,11 @@ public class ConversationManager : MonoBehaviour
         if (_dialogTextBox != null)
         {
             _dialogTextBox.gameObject.SetActive(false);
+        }
+
+        if(_endCallback != null)
+        {
+            _endCallback.Invoke();
         }
     }
 

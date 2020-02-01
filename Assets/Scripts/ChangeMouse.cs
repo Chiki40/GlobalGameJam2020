@@ -23,10 +23,11 @@ public class ChangeMouse : MonoBehaviour
         _spriteOutline.enabled = true;
     }
 
-    private void OnMouseExit()
+    public void OnMouseExit()
     {
         Cursor.SetCursor(_normalMouse, Vector2.zero, CursorMode.Auto);
-        _spriteOutline.enabled = false;
+        if(_spriteOutline)
+            _spriteOutline.enabled = false;
     }
 }
     
