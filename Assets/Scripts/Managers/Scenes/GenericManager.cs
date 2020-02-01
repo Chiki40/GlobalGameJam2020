@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public class GenericManager : MonoBehaviour
 {
+    [SerializeField]
+    private Animator _characterConversationAnimator = null;
+
     public ConversationManager _conversationManager = null;
     public LocalizationManager _localizationManager = null;
     public GlichManager _glichManager = null;
@@ -29,19 +32,27 @@ public class GenericManager : MonoBehaviour
 
     private int _maxPalabrasCorrectas = 0;
 
+    private const string kNextAnimatorTrigger = "next";
+
     private void Awake()
     {
         if (_conversationManager == null)
         {
-            Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _conversationManager not set");
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _conversationManager not set");
             return;
         }
 
         if (_localizationManager == null)
         {
-            Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _localizationManager not set");
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _localizationManager not set");
             return;
         }
+
+        if (_characterConversationAnimator == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _characterConversationAnimator not set");
+            return;
+        }        
 
         for(int i = 0; i < _pistas.Count; ++i)
         {
@@ -151,6 +162,7 @@ public class GenericManager : MonoBehaviour
 
     public void EndPartConversation()
     {
+        _characterConversationAnimator.SetTrigger(kNextAnimatorTrigger);
         if (_endPartConversation != null)
             _endPartConversation.Invoke();
     }
