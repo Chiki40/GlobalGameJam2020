@@ -1287,7 +1287,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_MethodName: EndPartConversation
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1322,9 +1322,9 @@ MonoBehaviour:
   - Text2_M
   - Text3_M
   _keysGirl:
-  - Text1_M
-  - Text1_M
-  - Text1_M
+  - Text1_F
+  - Text2_F
+  - Text2_F
   isBoy: 1
 --- !u!1 &9149495036576074085
 GameObject:

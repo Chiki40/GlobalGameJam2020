@@ -72,7 +72,7 @@ public class GenericManager : MonoBehaviour
             phrasesBoy.Add(p);
         }
 
-        for (int i = 0; i < _keysBoy.Count; ++i)
+        for (int i = 0; i < _keysGirl.Count; ++i)
         {
             Tuple<string, string> puzzle = new Tuple<string, string>("", "");
             bool withPuzzle = false;

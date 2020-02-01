@@ -27,12 +27,13 @@ public class LiteratureManager : MonoBehaviour
         _actualPalabrasCorrectas = 0;
     }
 
-    public void EndPartConversation(int phrase)
+    public void EndPartConversation()
     {
         _textInput.SetActive(false);
         inputAllreadyShow = false;
         int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
-        if (_genericManager.AllPistasConocidas() && (actualPhrase == 1 || actualPhrase == 2))
+        Pharse phrase = _genericManager.isBoy ? _genericManager.phrasesBoy[actualPhrase] : _genericManager.phrasesGirl[actualPhrase];
+        if (phrase.withPuzzle)
         {
             _genericManager._conversationManager.Block(true);
         }
@@ -76,7 +77,8 @@ public class LiteratureManager : MonoBehaviour
         int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
         if (!inputAllreadyShow)
         {
-            if (actualPhrase == 1 || actualPhrase == 2)
+            Pharse phrase = _genericManager.isBoy ? _genericManager.phrasesBoy[actualPhrase] : _genericManager.phrasesGirl[actualPhrase];
+            if (phrase.withPuzzle)
             {
                 _textInput.SetActive(true);
                 _textInput.GetComponent<InputField>().text = "";
