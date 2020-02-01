@@ -79,7 +79,7 @@ public class ChessClub : MonoBehaviour
             }
             else
             {
-                _genericManager.OnLevelCompleted();
+                _genericManager.OnLevelCompleted("EndText_2");
             }
         }
     }
