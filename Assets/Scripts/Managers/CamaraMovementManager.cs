@@ -5,8 +5,8 @@ using UnityEngine;
 public class CamaraMovementManager : MonoBehaviour
 {
     public Camera _camera;
-    public float marginLeft;
-    public float marginRight;
+    public float marginLeft = 0.1f;
+    public float marginRight = 0.1f;
     public float _velocity;
     public float maxMovement;
     private float actualMovement;
@@ -20,9 +20,26 @@ public class CamaraMovementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.mousePosition.x <= marginLeft)
+        float deltaMovement = 0;
+        if(Input.mousePosition.x <= marginLeft * Screen.width)
         {
-
+            deltaMovement -= Time.deltaTime * _velocity;
         }
+
+        if (Input.mousePosition.x >= Screen.width - (Screen.width*marginRight))
+        {
+            deltaMovement += Time.deltaTime * _velocity;
+        }
+
+        actualMovement += deltaMovement;
+
+        if (Mathf.Abs(actualMovement) >= maxMovement)
+        {
+            deltaMovement = 0;
+        }
+
+        Vector3 position = _camera.transform.position;
+        position.x += deltaMovement;
+        _camera.transform.position = position;
     }
 }
