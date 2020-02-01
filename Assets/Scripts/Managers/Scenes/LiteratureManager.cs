@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LiteratureManager : MonoBehaviour
@@ -15,11 +17,11 @@ public class LiteratureManager : MonoBehaviour
     public List<GameObject> _textInput;
     private List<bool> _pistaConocida;
     private int _numGlich = 0;
-    public int _maxGlich = 5;
     private int _actualPalabrasCorrectas = 0;
     public int _maxPalabrasCorrectas = 5;
     private bool _allPistas = false;
     private int currentFrase = 0;
+    public GlichComponent[] _gliches;
 
 
     private void Awake()
@@ -33,7 +35,18 @@ public class LiteratureManager : MonoBehaviour
 
     private void Start()
     {
-        _numGlich = 0;
+        _numGlich = _gliches.Length / 2; // 50% de gliches
+        for (int i = 0; i < _gliches.Length;++i)
+        {
+            if (i < _numGlich)
+            {
+                _gliches[i].glich();
+            }
+            else
+            {
+                _gliches[i].fixImage();
+            }
+        }
         _pistaConocida = new List<bool>();
         for(int i = 0;i < _pistas.Count; ++i)
         {
@@ -102,6 +115,7 @@ public class LiteratureManager : MonoBehaviour
     {
         if (_allPistas)
         {
+            RemoveGlich();
             ++_actualPalabrasCorrectas;
             Debug.Log(_actualPalabrasCorrectas);
             if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
@@ -119,6 +133,17 @@ public class LiteratureManager : MonoBehaviour
         {
             Debug.Log("aunque la palabra es correcta, no tienes todas las pistas");
             PalabraIncorrecta();
+        }
+    }
+
+    private void RemoveGlich()
+    {
+        Debug.Log("quitamos un glich");
+        --_numGlich;
+        _gliches[_numGlich].fixImage();
+        if (_numGlich <= 0)
+        {
+            Debug.Log("Todos los glich arreglados");
         }
     }
 
@@ -148,12 +173,17 @@ public class LiteratureManager : MonoBehaviour
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
+        _gliches[_numGlich].glich();
         ++_numGlich;
-        if (_numGlich > _maxGlich)
+        if (_numGlich >= _gliches.Length)
         {
             Debug.Log("game over");
             Scene scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+        }
+        else
+        {
+            
         }
 
     }

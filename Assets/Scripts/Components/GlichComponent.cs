@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
@@ -31,10 +32,16 @@ public class GlichComponent : MonoBehaviour
 
             if (m_spriteComponent.sprite == m_glichImage)
             {
-                m_animator.speed = Random.Range(0.0f, 3.0f);
+                m_animator.speed = UnityEngine.Random.Range(0.0f, 3.0f);
             }
             yield return new WaitForSeconds(2.5f);
         }
         
+    }
+
+    internal void glich()
+    {
+        m_spriteComponent.sprite = m_glichImage;
+        m_animator.SetBool("fixed", false);
     }
 }
