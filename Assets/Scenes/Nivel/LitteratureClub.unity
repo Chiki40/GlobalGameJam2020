@@ -589,6 +589,11 @@ PrefabInstance:
       propertyPath: _pistas.Array.data[1]
       value: 
       objectReference: {fileID: 2094190746}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endPartConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
