@@ -18,5 +18,9 @@
 	"Text9_M": "Llegué, v1 y <specialWord>WFÑDJ<solution>VENCI</solution></specialWord>",
 	"Text9_F": "Llegué, v1 y <specialWord>WFÑDJ<solution>VENCI</solution></specialWord>",
 	"Text10_M": "De8o irme, querido <specialWord>WZIUÑCBIU<solution>ORANGUTAN </solution></specialWord>.",
-	"Text10_F": "De8o irme, querida <specialWord>ITMJI<solution>AMEBA</solution></specialWord>."
+	"Text10_F": "De8o irme, querida <specialWord>ITMJI<solution>AMEBA</solution></specialWord>.",
+	"EndText_1":"Colorón colorado",
+	"EndText_2":"Este cuento se ha acabado",
+	"EndText_3":"...y no hemos reparado en gastos."
+
 }
