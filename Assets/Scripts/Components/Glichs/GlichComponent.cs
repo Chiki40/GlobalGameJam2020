@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
-public class GlichComponent : MonoBehaviour
+public class GlichComponent : IGlich
 {
     public Sprite m_glichImage;
     public Sprite m_fixedImage;
     private SpriteRenderer m_spriteComponent;
     private Animator m_animator;
 
-    public void fixImage()
+    public override void fix()
     {
         m_spriteComponent.sprite = m_fixedImage;
         m_animator.SetBool("fixed", true);
@@ -39,7 +39,7 @@ public class GlichComponent : MonoBehaviour
         
     }
 
-    internal void glich()
+    public override void glich()
     {
         m_spriteComponent.sprite = m_glichImage;
         m_animator.SetBool("fixed", false);
