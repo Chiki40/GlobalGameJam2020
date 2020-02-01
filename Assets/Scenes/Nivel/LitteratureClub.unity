@@ -434,12 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &995676715 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5383464394684038558, guid: 31135c470043b5d498604894b0dc5ca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1657275365}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1078894888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,19 +711,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5383464394684038558, guid: 31135c470043b5d498604894b0dc5ca3,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6f368663d316c1742ab2c5a80b88ecf5, type: 2}
     - target: {fileID: 8751283309066409409, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
-        type: 3}
-      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
@@ -772,16 +756,6 @@ PrefabInstance:
       propertyPath: _pistas.Array.data[1]
       value: 
       objectReference: {fileID: 2094190746}
-    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
-        type: 3}
-      propertyPath: _endPartConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
-        type: 3}
-      propertyPath: _characterConversationAnimator
-      value: 
-      objectReference: {fileID: 995676715}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
