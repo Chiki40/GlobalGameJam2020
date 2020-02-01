@@ -6,24 +6,40 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+struct Pharse
+{
+    public string allString;
+    public Tuple<string, string> puzzle;
+    public bool withPuzzle;
+}
+
 public class LiteratureManager : MonoBehaviour
 {
     [SerializeField]
     private ConversationManager _conversationManager = null;
+    [SerializeField]
+    private LocalizationManager _localizationManager = null;
 
     public GameObject _personaje;
-    public GameObject _personajeBig;
     public List<GameObject> _pistas;
-    public List<GameObject> _textInput;
+    public GameObject _textInput;
+    public TMPro.TextMeshProUGUI _textOutput;
     private List<bool> _pistaConocida;
     private int _numGlich = 0;
     private int _actualPalabrasCorrectas = 0;
-    public int _maxPalabrasCorrectas = 5;
+    private int _maxPalabrasCorrectas = 0;
     private bool _allPistas = false;
-    private int currentFrase = 0;
     public GlichComponent[] _gliches;
 
+    public List<string> _keysBoy;
+    public List<string> _keysGirl;
 
+    private List<Pharse> phrasesBoy;
+    private List<Pharse> phrasesGirl;
+
+    public bool isBoy = true;
+
+    private bool inputAllreadyShow = false;
     private void Awake()
     {
         if (_conversationManager == null)
@@ -31,12 +47,57 @@ public class LiteratureManager : MonoBehaviour
              Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _conversationManager not set");
             return;
         }
+
+        if (_localizationManager == null)
+        {
+            Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _localizationManager not set");
+            return;
+        }
+
+        //read boy keys
+        phrasesBoy = new List<Pharse>();
+        phrasesGirl = new List<Pharse>();
+
+        for(int i = 0; i < _keysBoy.Count; ++i)
+        {
+            Tuple<string, string> puzzle = new Tuple<string, string>("","");
+            bool withPuzzle = false;
+            string allString = _localizationManager.GetString(_keysBoy[i], ref puzzle, ref withPuzzle);
+
+            Pharse p = new Pharse
+            {
+                allString = allString,
+                puzzle = puzzle,
+                withPuzzle = withPuzzle
+            };
+
+            if(withPuzzle)
+            {
+                ++_maxPalabrasCorrectas;
+            }
+            phrasesBoy.Add(p);
+        }
+
+        for (int i = 0; i < _keysBoy.Count; ++i)
+        {
+            Tuple<string, string> puzzle = new Tuple<string, string>("", "");
+            bool withPuzzle = false;
+            string allString = _localizationManager.GetString(_keysGirl[i], ref puzzle, ref withPuzzle);
+
+            Pharse p = new Pharse
+            {
+                allString = allString,
+                puzzle = puzzle,
+                withPuzzle = withPuzzle
+            };
+            phrasesGirl.Add(p);
+        }
     }
 
     private void Start()
     {
         _numGlich = _gliches.Length / 2; // 50% de gliches
-        for (int i = 0; i < _gliches.Length;++i)
+        for (int i = 0; i < _gliches.Length; ++i)
         {
             if (i < _numGlich)
             {
@@ -52,35 +113,57 @@ public class LiteratureManager : MonoBehaviour
         {
             _pistaConocida.Add(false);
         }
-        PrimerMensaje();
+        ShowMensaje();
     }
 
-    public void PrimerMensaje()
+    public void ShowMensaje()
     {
-        FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
-        MostrarPersonajeBig();
+        List<string> actualString = new List<string>();
+        
+        if(isBoy)
+        {
+            for(int i = 0; i < phrasesBoy.Count; ++i)
+            {
+                actualString.Add(phrasesBoy[i].allString);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < phrasesGirl.Count; ++i)
+            {
+                actualString.Add(phrasesGirl[i].allString);
+            }
+        }
+        _conversationManager.SetConversation(actualString);
+        OcultarPersonaje();
     }
 
-    private void MostrarPersonajeBig()
+    private void OcultarPersonaje()
     {
         ChangeMouse ms = _personaje.GetComponent<ChangeMouse>();
         ms.OnMouseExit();
         _personaje.SetActive(false);
-        _personajeBig.SetActive(true);
     }
 
-    private void OcultarPersonajeBig()
+    private void MostrarPersonaje()
     {
         _personaje.SetActive(true);
-        _personajeBig.SetActive(false);
     }
 
     public void EndConversation()
     {
-        OcultarPersonajeBig();
+        MostrarPersonaje();
+
+        if(_maxPalabrasCorrectas == _actualPalabrasCorrectas)
+        {
+            Debug.Log("nivel pasado");
+        }
     }
     public void EndPartConversation()
     {
+        _textInput.SetActive(false);
+        inputAllreadyShow = false;
+        /*
         //deactivate all
         for( int i = 0; i < _textInput.Count; ++i)
         {
@@ -89,7 +172,6 @@ public class LiteratureManager : MonoBehaviour
 
         if (_allPistas)
         {
-            Debug.Log("loool" + currentFrase);
             //dependin the clue, we activate a different one
             if (currentFrase == 1)
             {
@@ -104,6 +186,7 @@ public class LiteratureManager : MonoBehaviour
             }
             ++currentFrase;
         }
+        */
     }
 
     public void PistaConocida(int index)
@@ -111,34 +194,62 @@ public class LiteratureManager : MonoBehaviour
         _pistaConocida[index] = true;
     }
 
-    public void PalabraCorrecta(int index)
+    public void CheckPalabra()
     {
-        if (_allPistas)
+        int actualPhrase = _conversationManager.getCurrentPhraseIndex();
+        InputField field = _textInput.GetComponent<InputField>();
+        string value = field.text;
+        string texto = _textOutput.text;
+
+        if (value.ToLower() == phrasesBoy[actualPhrase].puzzle.Item2.ToLower())
         {
-            RemoveGlich();
-            ++_actualPalabrasCorrectas;
-            Debug.Log(_actualPalabrasCorrectas);
-            if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
+            if (isBoy)
             {
-                _conversationManager.SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
-                Debug.Log("has acabado bien el nivel");
+                //la palabra esta bien
+                texto = texto.Replace(phrasesBoy[actualPhrase].puzzle.Item1, phrasesBoy[actualPhrase].puzzle.Item2.ToLower());
+                _textOutput.text = texto;
+                ++_actualPalabrasCorrectas;
             }
             else
             {
-                Debug.Log("pasamos conver");
-                _conversationManager.NextMessage(force:true);
+                //la palabra esta bien
+                texto = texto.Replace(phrasesGirl[actualPhrase].puzzle.Item1, phrasesGirl[actualPhrase].puzzle.Item2.ToLower());
+                _textOutput.text = texto;
+                ++_actualPalabrasCorrectas;
             }
         }
-        else
+        _textInput.SetActive(false);
+    }   
+
+    public void pulsadoEnTexto()
+    {
+        int actualPhrase = _conversationManager.getCurrentPhraseIndex();
+
+        if (!inputAllreadyShow)
         {
-            Debug.Log("aunque la palabra es correcta, no tienes todas las pistas");
-            PalabraIncorrecta();
+            if (actualPhrase == 1)
+            {
+                _textInput.SetActive(true);
+                _textInput.GetComponent<InputField>().text = "";
+                inputAllreadyShow = true;
+            }
+
+            if (actualPhrase == 2)
+            {
+                _textInput.SetActive(true);
+                _textInput.GetComponent<InputField>().text = "";
+                inputAllreadyShow = true;
+            }
         }
     }
 
     private void RemoveGlich()
     {
         Debug.Log("quitamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         --_numGlich;
         _gliches[_numGlich].fixImage();
         if (_numGlich <= 0)
@@ -147,32 +258,46 @@ public class LiteratureManager : MonoBehaviour
         }
     }
 
+    /*
     public void PalabraIncorrecta()
     {
         CrearGlich();
+        if (currentFrase == 1)
+        {
+            _textInput[0].GetComponent<InputField>().text = "";
+        }
+
+        if (currentFrase == 2)
+        {
+            _textInput[1].GetComponent<InputField>().text = "";
+        }
     }
+    */
 
     public void PulsadoElPersonaje()
     {
-        MostrarPersonajeBig();
+        OcultarPersonaje();
 
         _allPistas  = _pistaConocida.TrueForAll(b => b == true);
 
         if (!_allPistas)
         {
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
             CrearGlich();
         }
         else
         {
-            currentFrase = 0;
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
+            _actualPalabrasCorrectas = 0;
         }
+        ShowMensaje();
     }
     
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         _gliches[_numGlich].glich();
         ++_numGlich;
         if (_numGlich >= _gliches.Length)

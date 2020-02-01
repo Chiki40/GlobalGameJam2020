@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkipConversationClickableComponent : ClickableComponent
+public class SkipConversationClickableComponent : MonoBehaviour
 {
     [SerializeField]
     private ConversationManager _conversationManager = null;

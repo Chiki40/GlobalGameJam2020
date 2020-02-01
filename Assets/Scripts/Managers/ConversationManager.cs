@@ -11,6 +11,8 @@ public class ConversationManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _dialogText = null;
     [SerializeField]
+    private GameObject _nextButton = null;
+    [SerializeField]
     private float _timeBetweenShownChars = 0.1f;
     private List<string> _currentConversationTexts = null;
     private int _currentConversationIndex = -1;
@@ -23,6 +25,12 @@ public class ConversationManager : MonoBehaviour
 
     [SerializeField]
     private UnityEvent _nextCallback;
+
+    [SerializeField]
+    private UnityEvent _textPress;
+
+    [SerializeField]
+    private UnityEvent _checkWord;
 
     private void Awake()
     {
@@ -37,12 +45,18 @@ public class ConversationManager : MonoBehaviour
              Debug.LogError("[ConversationManager.Awake] ERROR: Serializable _dialogTextBox not set");
             return;
         }
-        _blocked = false;
+        if (_nextButton == null)
+        {
+             Debug.LogError("[ConversationManager.Awake] ERROR: Serializable _nextButton not set");
+            return;
+        }
+        Block(false);
     }
 
     public void Block(bool block)
     {
         _blocked = block;
+        _nextButton.SetActive(!block);
     }
 
     public void SetConversation(List<string> conversationTexts)
@@ -55,7 +69,7 @@ public class ConversationManager : MonoBehaviour
         _currentConversationIndex = -1;
         _currentConversationShownChar = 0;
         _timeRemainingForNextShownChar = _timeBetweenShownChars;
-        _blocked = false;
+        Block(false);
         NextMessage();
     }
 
@@ -116,6 +130,27 @@ public class ConversationManager : MonoBehaviour
                     _dialogText.text = _currentConversationTexts[_currentConversationIndex].Substring(0, _currentConversationShownChar + 1);   
                 }
             }
+        }
+    }
+
+    public void onTextPress()
+    {
+        if(_textPress != null)
+        {
+            _textPress.Invoke();
+        }
+    }
+
+    public int getCurrentPhraseIndex()
+    {
+        return _currentConversationIndex;
+    }
+
+    public void checkWord()
+    {
+        if(_checkWord != null)
+        {
+            _checkWord.Invoke();
         }
     }
 }
