@@ -10,6 +10,7 @@ public class ChessClub : MonoBehaviour
     public List<GameObject> _chess;
     public List<GameObject> _chessPreGame;
     public List<GameObject> _chessPostGame;
+    public List<GameObject> _fondos;
 
     int currentLevel = 0;
     private int maxLevels = 3;
@@ -37,6 +38,8 @@ public class ChessClub : MonoBehaviour
     private void Start()
     {
         EnableClickableComponent();
+        _fondos[0].SetActive(true);
+        _fondos[1].SetActive(false);
         maxLevels = _chessPostGame.Count;
     }
 
@@ -110,6 +113,7 @@ public class ChessClub : MonoBehaviour
         {
             _chessPreGame[currentLevel].SetActive(false);
             _chessPostGame[currentLevel].SetActive(true);
+            _genericManager.EliminarGlich();
             StartCoroutine("WaitToClose");
         }
         else
@@ -125,6 +129,10 @@ public class ChessClub : MonoBehaviour
         _chessPreGame[currentLevel].SetActive(false);
         onTextEnd = true;
         _chessPostGame[currentLevel].SetActive(false);
+
+        _fondos[0].SetActive(false);
+        _fondos[1].SetActive(true);
+
         switch (currentLevel)
         {
             case 0: ShowMessage(_genericManager.isBoy ? key1Out_boy : key1Out_girl); break;
