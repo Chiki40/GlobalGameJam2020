@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(Collider2D))]
 public class ClickableComponent : MonoBehaviour
 {
     public UnityEvent OnMouseDownEvent;
