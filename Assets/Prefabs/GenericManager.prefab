@@ -1014,6 +1014,7 @@ GameObject:
   - component: {fileID: 8751283309061150574}
   - component: {fileID: 8751283309061150572}
   - component: {fileID: 8751283309061150575}
+  - component: {fileID: 5383464394684038558}
   m_Layer: 5
   m_Name: Personaje Grande
   m_TagString: Untagged
@@ -1076,6 +1077,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &5383464394684038558
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751283309061150569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8751283309066409421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65026cd6400851640becc24cbdc4bd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterConversationAnimator: {fileID: 0}
   _conversationManager: {fileID: 8997949329451784967}
   _localizationManager: {fileID: 873851808112865829}
   _glichManager: {fileID: 1746659649821788678}
