@@ -74,10 +74,8 @@ public class LiteratureManager : MonoBehaviour
         }
 
         int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
-        //Debug.Log(actualPhrase);
         if (!inputAllreadyShow)
         {
-            //Debug.Log(inputAllreadyShow.ToString());
             if (actualPhrase == 1 || actualPhrase == 2)
             {
                 _textInput.SetActive(true);
