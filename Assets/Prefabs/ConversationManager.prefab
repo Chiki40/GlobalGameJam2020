@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogTextBox: {fileID: 6359988750017919932}
   _dialogText: {fileID: 3904029173044687975}
-  _timeBetweenShownChars: 0.1
+  _timeBetweenShownChars: 0.025
   _endCallback:
     m_PersistentCalls:
       m_Calls:

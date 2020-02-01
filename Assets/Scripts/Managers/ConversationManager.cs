@@ -16,6 +16,7 @@ public class ConversationManager : MonoBehaviour
     private int _currentConversationIndex = -1;
     private int _currentConversationShownChar = 0;
     private float _timeRemainingForNextShownChar = 0.0f;
+    private bool _blocked = false;
 
     [SerializeField]
     private UnityEvent _endCallback;
@@ -36,6 +37,12 @@ public class ConversationManager : MonoBehaviour
              Debug.LogError("[ConversationManager.Awake] ERROR: Serializable _dialogTextBox not set");
             return;
         }
+        _blocked = false;
+    }
+
+    public void Block(bool block)
+    {
+        _blocked = block;
     }
 
     public void SetConversation(List<string> conversationTexts)
@@ -48,6 +55,7 @@ public class ConversationManager : MonoBehaviour
         _currentConversationIndex = -1;
         _currentConversationShownChar = 0;
         _timeRemainingForNextShownChar = _timeBetweenShownChars;
+        _blocked = false;
         NextMessage();
     }
 
@@ -64,12 +72,12 @@ public class ConversationManager : MonoBehaviour
         }
     }
 
-    public void NextMessage()
+    public void NextMessage(bool force=false)
     {
         if (_dialogText != null && _dialogTextBox != null && _dialogTextBox.activeInHierarchy && _dialogText.enabled && _currentConversationTexts != null)
         {
             // First message or finished message? We can set it
-            if (_currentConversationIndex == -1 || _currentConversationShownChar == _currentConversationTexts[_currentConversationIndex].Length - 1)
+            if (_currentConversationIndex == -1 || force || (_currentConversationShownChar == _currentConversationTexts[_currentConversationIndex].Length - 1 && !_blocked))
             {
                 if (_currentConversationIndex < _currentConversationTexts.Count - 1)
                 {

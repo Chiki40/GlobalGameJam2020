@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LiteratureManager : MonoBehaviour
 {
+    [SerializeField]
+    private ConversationManager _conversationManager = null;
+
     public GameObject _personaje;
     public GameObject _personajeBig;
     public List<GameObject> _pistas;
@@ -18,8 +22,16 @@ public class LiteratureManager : MonoBehaviour
     private int currentFrase = 0;
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
+    {
+        if (_conversationManager == null)
+        {
+             Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _conversationManager not set");
+            return;
+        }
+    }
+
+    private void Start()
     {
         _numGlich = 0;
         _pistaConocida = new List<bool>();
@@ -64,15 +76,18 @@ public class LiteratureManager : MonoBehaviour
 
         if (_allPistas)
         {
+            Debug.Log("loool" + currentFrase);
             //dependin the clue, we activate a different one
             if (currentFrase == 1)
             {
                 _textInput[0].SetActive(true);
+                _conversationManager.Block(true);
             }
 
             if (currentFrase == 2)
             {
                 _textInput[1].SetActive(true);
+                _conversationManager.Block(true);
             }
             ++currentFrase;
         }
@@ -88,10 +103,16 @@ public class LiteratureManager : MonoBehaviour
         if (_allPistas)
         {
             ++_actualPalabrasCorrectas;
+            Debug.Log(_actualPalabrasCorrectas);
             if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
             {
-                FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
+                _conversationManager.SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
                 Debug.Log("has acabado bien el nivel");
+            }
+            else
+            {
+                Debug.Log("pasamos conver");
+                _conversationManager.NextMessage(force:true);
             }
         }
         else
