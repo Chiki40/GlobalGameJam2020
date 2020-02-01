@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(SpriteOutline))]
 public class ChangeMouse : MonoBehaviour
 {
