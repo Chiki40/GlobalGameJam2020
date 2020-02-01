@@ -8,10 +8,11 @@ public class ChessClub : MonoBehaviour
     public GenericManager _genericManager;
     public List<GameObject> _clickableComponents;
     public List<GameObject> _chess;
-    public List<GameObject> _chessEnded;
+    public List<GameObject> _chessPreGame;
+    public List<GameObject> _chessPostGame;
 
     int currentLevel = 0;
-    public int maxLevels = 3;
+    private int maxLevels = 3;
 
     public List<GameObject> objetosCambioOn;
     public List<GameObject> objetosCambioOff;
@@ -36,6 +37,7 @@ public class ChessClub : MonoBehaviour
     private void Start()
     {
         EnableClickableComponent();
+        maxLevels = _chessPostGame.Count;
     }
 
     public void MostrarNivel(int level)
@@ -52,8 +54,10 @@ public class ChessClub : MonoBehaviour
         for (int i = 0; i < _clickableComponents.Count; ++i)
         {
             _clickableComponents[i].GetComponent<ClickableComponent>().enabled = false;
+            _clickableComponents[i].GetComponent<ChangeMouse>().OnMouseExit();
             _clickableComponents[i].GetComponent<ChangeMouse>().enabled = false;
             _clickableComponents[i].GetComponent<SpriteOutline>().enabled = false;
+            _clickableComponents[i].GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 
@@ -62,6 +66,7 @@ public class ChessClub : MonoBehaviour
         if(onTextStart)
         {
             _chess[currentLevel].SetActive(true);
+            _chessPreGame[currentLevel].SetActive(true);
             onTextStart = false;
         }
 
@@ -94,16 +99,17 @@ public class ChessClub : MonoBehaviour
         }
         _clickableComponents[currentLevel].GetComponent<ClickableComponent>().enabled = true;
         _clickableComponents[currentLevel].GetComponent<ChangeMouse>().enabled = true;
+        _clickableComponents[currentLevel].GetComponent<Collider2D>().enabled = true;
         _clickableComponents[currentLevel].GetComponent<ChangeMouse>().OnMouseExit();
         _clickableComponents[currentLevel].GetComponent<SpriteOutline>().enabled = false;
     }
 
-    public void PiezePress(int index, GameObject go)
+    public void PiezePress(bool win)
     {
-        if (index == 0)
+        if (win)
         {
-            _chess[currentLevel].SetActive(false);
-            _chessEnded[currentLevel].SetActive(true);
+            _chessPreGame[currentLevel].SetActive(false);
+            _chessPostGame[currentLevel].SetActive(true);
             StartCoroutine("WaitToClose");
         }
         else
@@ -116,8 +122,9 @@ public class ChessClub : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         _chess[currentLevel].SetActive(false);
+        _chessPreGame[currentLevel].SetActive(false);
         onTextEnd = true;
-        _chessEnded[currentLevel].SetActive(false);
+        _chessPostGame[currentLevel].SetActive(false);
         switch (currentLevel)
         {
             case 0: ShowMessage(_genericManager.isBoy ? key1Out_boy : key1Out_girl); break;

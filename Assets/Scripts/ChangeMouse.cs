@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(SpriteOutline))]
 public class ChangeMouse : MonoBehaviour
 {
     public Texture2D _normalMouse;
@@ -13,7 +12,8 @@ public class ChangeMouse : MonoBehaviour
     private void Start()
     {
         Cursor.SetCursor(_normalMouse, Vector2.zero, CursorMode.Auto);
-        _spriteOutline.enabled = false;
+        if (_spriteOutline)
+            _spriteOutline.enabled = false;
     }
 
     private void OnMouseEnter()
@@ -21,7 +21,8 @@ public class ChangeMouse : MonoBehaviour
         if(this.enabled)
         {
             Cursor.SetCursor(_specialMouse, Vector2.zero, CursorMode.Auto);
-            _spriteOutline.enabled = true;
+            if(_spriteOutline)
+                _spriteOutline.enabled = true;
         }
     }
 
