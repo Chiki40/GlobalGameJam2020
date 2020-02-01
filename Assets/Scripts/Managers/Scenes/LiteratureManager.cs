@@ -64,6 +64,7 @@ public class LiteratureManager : MonoBehaviour
             }
         }
         _textInput.SetActive(false);
+        _genericManager._conversationManager.Block(false);
     }
 
     public void pulsadoEnTexto()
@@ -72,17 +73,11 @@ public class LiteratureManager : MonoBehaviour
 
         if (!inputAllreadyShow)
         {
-            if (actualPhrase == 1)
+            if (actualPhrase == 1 || actualPhrase == 2)
             {
                 _textInput.SetActive(true);
                 _textInput.GetComponent<InputField>().text = "";
-                inputAllreadyShow = true;
-            }
-
-            if (actualPhrase == 2)
-            {
-                _textInput.SetActive(true);
-                _textInput.GetComponent<InputField>().text = "";
+                _genericManager._conversationManager.Block(true);
                 inputAllreadyShow = true;
             }
         }
