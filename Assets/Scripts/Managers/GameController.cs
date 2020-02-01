@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     [SerializeField]
+    private float _timeToExitLevels = 3.0f;    
+    [SerializeField]
     private string[] _levels;
     private Dictionary<string, bool> _completedLevels = new Dictionary<string, bool>();
     private string _currentLevel = null;
@@ -63,16 +65,34 @@ public class GameController : MonoBehaviour
         {
             Victory();
         }
+        else
+        {
+            StartCoroutine(LevelCompletedCoroutine());
+        }
+    }
+
+    private IEnumerator LevelCompletedCoroutine()
+    {
+        yield return new WaitForSeconds(_timeToExitLevels);
+        SceneManager.LoadScene("Initial");
     }
 
     public void LevelGameOver()
     {
         Debug.Log("GAME OVER!");
         _currentLevel = null;
-    }
+        StartCoroutine(WonOrLostCoroutine());
+    }    
 
     public void Victory()
     {
         Debug.Log("VICTORY!");
+        StartCoroutine(WonOrLostCoroutine());
     }
+
+    private IEnumerator WonOrLostCoroutine()
+    {
+        yield return new WaitForSeconds(_timeToExitLevels);
+        SceneManager.LoadScene("Menu");
+    }    
 }
