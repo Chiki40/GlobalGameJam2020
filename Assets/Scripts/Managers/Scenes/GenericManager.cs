@@ -2,12 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class GenericManager : MonoBehaviour
 {
     [SerializeField]
     private Animator _characterConversationAnimator = null;
+    [SerializeField]
+    private Animator _postgameAnimator = null;
+    [SerializeField]
+    private Animator _postgameTextAnimator = null;
+    [SerializeField]
+    private Text _postgameText= null;       
+    [SerializeField]
+    private float _postgameTime = 1.0f;    
 
     public ConversationManager _conversationManager = null;
     public LocalizationManager _localizationManager = null;
@@ -52,7 +61,25 @@ public class GenericManager : MonoBehaviour
         {
             Debug.LogError("[GenericManager.Awake] ERROR: Serializable _characterConversationAnimator not set");
             return;
-        }        
+        }
+
+        if (_postgameAnimator == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _postgameAnimator not set");
+            return;
+        }
+
+        if (_postgameTextAnimator == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _postgameTextAnimator not set");
+            return;
+        }
+
+        if (_postgameText == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _postgameText not set");
+            return;
+        }            
 
         for(int i = 0; i < _pistas.Count; ++i)
         {
@@ -200,8 +227,18 @@ public class GenericManager : MonoBehaviour
 
     public void OnLevelCompleted()
     {
-        GameController.GetInstance().LevelCompleted();
-    }    
+        StartCoroutine(OnLevelCompletedCoroutine());
+    }
+
+    private IEnumerator OnLevelCompletedCoroutine()
+   {
+       _postgameAnimator.enabled = true;
+       yield return new WaitForSeconds(_postgameAnimator.GetCurrentAnimatorStateInfo(0).length);
+       _postgameText.text = "YAAAAAAY";
+       _postgameTextAnimator.enabled = true;
+       yield return new WaitForSeconds(_postgameTime);
+       GameController.GetInstance().LevelCompleted();
+   } 
 
     public void OnGameOver()
     {
