@@ -57,7 +57,7 @@ public class LiteratureManager : MonoBehaviour
 
     public void PrimerMensaje()
     {
-        FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
+        _conversationManager.SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
         MostrarPersonajeBig();
     }
 
@@ -89,7 +89,6 @@ public class LiteratureManager : MonoBehaviour
 
         if (_allPistas)
         {
-            Debug.Log("loool" + currentFrase);
             //dependin the clue, we activate a different one
             if (currentFrase == 1)
             {
@@ -117,7 +116,6 @@ public class LiteratureManager : MonoBehaviour
         {
             RemoveGlich();
             ++_actualPalabrasCorrectas;
-            Debug.Log(_actualPalabrasCorrectas);
             if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
             {
                 _conversationManager.SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
@@ -125,7 +123,6 @@ public class LiteratureManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("pasamos conver");
                 _conversationManager.NextMessage(force:true);
             }
         }
@@ -173,13 +170,13 @@ public class LiteratureManager : MonoBehaviour
 
         if (!_allPistas)
         {
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
+           _conversationManager.SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
             CrearGlich();
         }
         else
         {
             currentFrase = 0;
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
+            _conversationManager.SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
         }
     }
     
