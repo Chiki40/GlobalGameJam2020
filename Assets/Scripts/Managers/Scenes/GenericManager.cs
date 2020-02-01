@@ -128,6 +128,7 @@ public class GenericManager : MonoBehaviour
 
     private void Start()
     {
+        UtilSound.instance.StopAllSounds();
         ShowMensaje();
     }
 

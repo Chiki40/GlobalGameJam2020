@@ -21,12 +21,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("LitteratureClub");
-    }
-
-    public void Credits()
-    {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("GenderSelection");
     }
 
     public void ExitGame()

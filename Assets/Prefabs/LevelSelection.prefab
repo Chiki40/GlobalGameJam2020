@@ -578,6 +578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6945449686654074058}
   - component: {fileID: 7608562559400720900}
+  - component: {fileID: 6916729414963859024}
   m_Layer: 0
   m_Name: LevelSelection
   m_TagString: Untagged
@@ -653,3 +654,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6916729414963859024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616378134378146999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbf09f6744c04ef781694d4e4f6f92e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
