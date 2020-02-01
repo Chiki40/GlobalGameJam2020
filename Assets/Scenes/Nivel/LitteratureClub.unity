@@ -1195,6 +1195,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
         type: 3}
+      propertyPath: _keysGirl.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysBoy.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
       propertyPath: _conversationManager
       value: 
       objectReference: {fileID: 293231732}
@@ -1228,6 +1238,41 @@ PrefabInstance:
       propertyPath: _textInput.Array.data[1]
       value: 
       objectReference: {fileID: 351286234}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _localizationManager
+      value: 
+      objectReference: {fileID: 8453896807473972655}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysGirl.Array.data[0]
+      value: literature_g_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysGirl.Array.data[1]
+      value: literature_g_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysGirl.Array.data[2]
+      value: literature_g_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysBoy.Array.data[0]
+      value: literature_b_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysBoy.Array.data[1]
+      value: literature_b_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6604329632844222847, guid: 89fbb71d401b8426d90f84334097d544,
+        type: 3}
+      propertyPath: _keysBoy.Array.data[2]
+      value: literature_b_3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89fbb71d401b8426d90f84334097d544, type: 3}
 --- !u!1001 &8066033295019581601
@@ -1448,3 +1493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9bd697ea3a47452fbe462fca5c2753b, type: 3}
+--- !u!114 &8453896807473972655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1233308723770888477, guid: a9bd697ea3a47452fbe462fca5c2753b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8453896807473972654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5daf7f541e99e4cba88a89dd240a7075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
