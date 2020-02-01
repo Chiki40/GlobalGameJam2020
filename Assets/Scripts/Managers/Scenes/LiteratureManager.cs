@@ -36,7 +36,7 @@ public class LiteratureManager : MonoBehaviour
     private void Start()
     {
         _numGlich = _gliches.Length / 2; // 50% de gliches
-        for (int i = 0; i < _gliches.Length;++i)
+        for (int i = 0; i < _gliches.Length; ++i)
         {
             if (i < _numGlich)
             {
@@ -139,6 +139,10 @@ public class LiteratureManager : MonoBehaviour
     private void RemoveGlich()
     {
         Debug.Log("quitamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         --_numGlich;
         _gliches[_numGlich].fixImage();
         if (_numGlich <= 0)
@@ -150,6 +154,15 @@ public class LiteratureManager : MonoBehaviour
     public void PalabraIncorrecta()
     {
         CrearGlich();
+        if (currentFrase == 1)
+        {
+            _textInput[0].GetComponent<InputField>().text = "";
+        }
+
+        if (currentFrase == 2)
+        {
+            _textInput[1].GetComponent<InputField>().text = "";
+        }
     }
 
     public void PulsadoElPersonaje()
@@ -173,6 +186,10 @@ public class LiteratureManager : MonoBehaviour
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         _gliches[_numGlich].glich();
         ++_numGlich;
         if (_numGlich >= _gliches.Length)
