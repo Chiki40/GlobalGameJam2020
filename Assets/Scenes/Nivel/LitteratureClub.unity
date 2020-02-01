@@ -552,6 +552,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
+      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
       propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 849103576}
@@ -590,6 +595,11 @@ PrefabInstance:
       propertyPath: _pistas.Array.data[1]
       value: 
       objectReference: {fileID: 2094190746}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endPartConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1009,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalMouse: {fileID: 2800000, guid: 3201f8f09bec09741ad87511f4dec837, type: 3}
   _specialMouse: {fileID: 2800000, guid: 16233f6f678460a43a14ebbbd06e9a18, type: 3}
-  _spriteOutline: {fileID: 0}
+  _spriteOutline: {fileID: 2101254191}
 --- !u!114 &2101254191
 MonoBehaviour:
   m_ObjectHideFlags: 0
