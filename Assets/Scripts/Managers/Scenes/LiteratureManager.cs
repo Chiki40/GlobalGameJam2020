@@ -36,7 +36,7 @@ public class LiteratureManager : MonoBehaviour
     private void Start()
     {
         _numGlich = _gliches.Length / 2; // 50% de gliches
-        for (int i = 0; i < _gliches.Length;++i)
+        for (int i = 0; i < _gliches.Length; ++i)
         {
             if (i < _numGlich)
             {
@@ -57,7 +57,7 @@ public class LiteratureManager : MonoBehaviour
 
     public void PrimerMensaje()
     {
-        FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
+        _conversationManager.SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
         MostrarPersonajeBig();
     }
 
@@ -89,7 +89,6 @@ public class LiteratureManager : MonoBehaviour
 
         if (_allPistas)
         {
-            Debug.Log("loool" + currentFrase);
             //dependin the clue, we activate a different one
             if (currentFrase == 1)
             {
@@ -117,7 +116,6 @@ public class LiteratureManager : MonoBehaviour
         {
             RemoveGlich();
             ++_actualPalabrasCorrectas;
-            Debug.Log(_actualPalabrasCorrectas);
             if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
             {
                 _conversationManager.SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
@@ -125,7 +123,6 @@ public class LiteratureManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("pasamos conver");
                 _conversationManager.NextMessage(force:true);
             }
         }
@@ -139,6 +136,10 @@ public class LiteratureManager : MonoBehaviour
     private void RemoveGlich()
     {
         Debug.Log("quitamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         --_numGlich;
         _gliches[_numGlich].fixImage();
         if (_numGlich <= 0)
@@ -150,6 +151,15 @@ public class LiteratureManager : MonoBehaviour
     public void PalabraIncorrecta()
     {
         CrearGlich();
+        if (currentFrase == 1)
+        {
+            _textInput[0].GetComponent<InputField>().text = "";
+        }
+
+        if (currentFrase == 2)
+        {
+            _textInput[1].GetComponent<InputField>().text = "";
+        }
     }
 
     public void PulsadoElPersonaje()
@@ -160,19 +170,23 @@ public class LiteratureManager : MonoBehaviour
 
         if (!_allPistas)
         {
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
+           _conversationManager.SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
             CrearGlich();
         }
         else
         {
             currentFrase = 0;
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
+            _conversationManager.SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
         }
     }
     
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
+        if (_gliches.Length == 0)
+        {
+            return;
+        }
         _gliches[_numGlich].glich();
         ++_numGlich;
         if (_numGlich >= _gliches.Length)
