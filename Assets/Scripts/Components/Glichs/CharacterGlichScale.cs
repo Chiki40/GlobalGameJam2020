@@ -8,10 +8,8 @@ public class CharacterGlichScale : IGlich
     public bool m_enabled = false;
     public RectTransform m_transform;
     public bool scaleInX = false;
-    [Range(1, 10)]
     public int maxScaleInX = 10;
     public bool scaleInY = false;
-    [Range(1, 10)]
     public int maxScaleInY = 10;
     private bool m_wait = false;
 
@@ -42,14 +40,14 @@ public class CharacterGlichScale : IGlich
     {
         while (true)
         {
-            if (m_enabled)
+            if (m_enabled && scaleInY)
             {
                 if (m_transform.transform.localScale.y > maxScaleInY*2)
                 {
                     Vector3 scale = m_transform.transform.localScale;
                     scale.y = 1;
                     m_transform.transform.localScale = scale;
-                    yield return new WaitForSeconds(5);
+                    yield return new WaitForSeconds(UnityEngine.Random.Range(3, 5));
 
                 }
                 float speed = UnityEngine.Random.Range(0.0f, 1.0f);
@@ -63,7 +61,7 @@ public class CharacterGlichScale : IGlich
     {
         while (true)
         {
-            if (m_enabled)
+            if (m_enabled && scaleInX)
             {
                 if (m_transform.transform.localScale.x > maxScaleInX*2)
                 {
