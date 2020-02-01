@@ -31,8 +31,15 @@ public class LocalizationManager : MonoBehaviour
             withPalabraEspecial = true;
             string solucionPuzzle = getSpecialValue(ref specialWord, "<solution>", "</solution>");
             //clean special world
-            string stringToClean = specialWord + "<solution>" + solucionPuzzle + "</solution>";
-            resultString = resultString.Replace(stringToClean, specialWord);
+            string stringToClean = "<solution>" + solucionPuzzle + "</solution>";
+            resultString = resultString.Replace(stringToClean, "");
+
+            specialWord = specialWord.Replace(stringToClean, "");
+            specialWord = specialWord.Replace(keyStart, "");
+            specialWord = specialWord.Replace(keyEnd, "");
+
+            resultString = resultString.Replace(keyStart, "");
+            resultString = resultString.Replace(keyEnd, "");
 
             Tuple<string, string> newTuple = new Tuple<string, string>(specialWord, solucionPuzzle);
             palabrasEspeciales = newTuple;

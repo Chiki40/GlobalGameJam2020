@@ -26,6 +26,12 @@ public class ConversationManager : MonoBehaviour
     [SerializeField]
     private UnityEvent _nextCallback;
 
+    [SerializeField]
+    private UnityEvent _textPress;
+
+    [SerializeField]
+    private UnityEvent _checkWord;
+
     private void Awake()
     {
         _currentConversationIndex = -1;
@@ -124,6 +130,27 @@ public class ConversationManager : MonoBehaviour
                     _dialogText.text = _currentConversationTexts[_currentConversationIndex].Substring(0, _currentConversationShownChar + 1);   
                 }
             }
+        }
+    }
+
+    public void onTextPress()
+    {
+        if(_textPress != null)
+        {
+            _textPress.Invoke();
+        }
+    }
+
+    public int getCurrentPhraseIndex()
+    {
+        return _currentConversationIndex;
+    }
+
+    public void checkWord()
+    {
+        if(_checkWord != null)
+        {
+            _checkWord.Invoke();
         }
     }
 }
