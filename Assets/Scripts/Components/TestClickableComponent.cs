@@ -12,9 +12,5 @@ public class TestClickableComponent : ClickableComponent
             _alreadyLaunched = true;
             FindObjectOfType<ConversationManager>().SetConversation(new List<string>(){"loooool", "laaaaaal", "leeeeeeeeel", "luuuuuul", "liiiil"});
         }
-        else
-        {
-            FindObjectOfType<ConversationManager>().NextMessage();
-        }
     }
 }
