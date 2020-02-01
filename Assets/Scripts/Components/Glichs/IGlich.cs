@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IGlich : MonoBehaviour
+public abstract class IGlich : MonoBehaviour
 {
-    public virtual void fix()
-    {
-       
-    }
-    public virtual void glich()
-    {
-
-    }
+    public abstract void fix();
+    public abstract void glich();
 }
