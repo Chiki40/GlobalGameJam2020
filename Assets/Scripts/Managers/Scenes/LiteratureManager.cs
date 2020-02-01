@@ -21,7 +21,6 @@ public class LiteratureManager : MonoBehaviour
     private LocalizationManager _localizationManager = null;
 
     public GameObject _personaje;
-    public GameObject _personajeBig;
     public List<GameObject> _pistas;
     public List<GameObject> _textInput;
     private List<bool> _pistaConocida;
@@ -105,26 +104,24 @@ public class LiteratureManager : MonoBehaviour
     public void PrimerMensaje()
     {
         _conversationManager.SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
-        MostrarPersonajeBig();
+        OcultarPersonaje();
     }
 
-    private void MostrarPersonajeBig()
+    private void OcultarPersonaje()
     {
         ChangeMouse ms = _personaje.GetComponent<ChangeMouse>();
         ms.OnMouseExit();
         _personaje.SetActive(false);
-        _personajeBig.SetActive(true);
     }
 
-    private void OcultarPersonajeBig()
+    private void MostrarPersonaje()
     {
         _personaje.SetActive(true);
-        _personajeBig.SetActive(false);
     }
 
     public void EndConversation()
     {
-        OcultarPersonajeBig();
+        MostrarPersonaje();
     }
     public void EndPartConversation()
     {
@@ -211,7 +208,7 @@ public class LiteratureManager : MonoBehaviour
 
     public void PulsadoElPersonaje()
     {
-        MostrarPersonajeBig();
+        OcultarPersonaje();
 
         _allPistas  = _pistaConocida.TrueForAll(b => b == true);
 
