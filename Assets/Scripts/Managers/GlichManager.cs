@@ -16,14 +16,7 @@ public class GlichManager : MonoBehaviour
         m_levelOfGlich = m_gliches.Length / 2; // 50% de gliches
         for (int i = 0; i < m_gliches.Length; ++i)
         {
-            if (i < m_levelOfGlich)
-            {
-                m_gliches[i].glich();
-            }
-            else
-            {
-                m_gliches[i].fix();
-            }
+            m_gliches[i].glich((float)m_levelOfGlich / (float)m_gliches.Length);
         }
     }
 
@@ -34,45 +27,27 @@ public class GlichManager : MonoBehaviour
     }
     
     // returns true if the minimun level has been reached
-    public bool ReduceLevelOfGlich()
+    public void ReduceLevelOfGlich()
     {
         Debug.Log("quitamos un glich");
-        if (m_gliches.Length == 0)
-        {
-            return true;
-        }
         --m_levelOfGlich;
-        m_gliches[m_levelOfGlich].fix();
-        if (m_levelOfGlich <= 0)
+        if (m_levelOfGlich == 0) onMinimunLevelOfGlich.Invoke();
+        for (int i = 0; i < m_gliches.Length; ++i)
         {
-            Debug.Log("Todos los glich arreglados");
-            onMinimunLevelOfGlich.Invoke();
-            return true;
-        }
-        else
-        {
-            return false;
+            m_gliches[i].glich((float)m_levelOfGlich / (float)m_gliches.Length);
         }
     }
 
     // returns true if the maximun level has been reached
-    public bool AddLevelOfGlich()
+    public void AddLevelOfGlich()
     {
         Debug.Log("creamos un glich");
-        if (m_gliches.Length == 0)
-        {
-            return true;
-        }
-        m_gliches[m_levelOfGlich].glich();
         ++m_levelOfGlich;
-        if (m_levelOfGlich >= m_gliches.Length)
+        if (m_levelOfGlich >= m_gliches.Length) onMaximunLevelOfGlich.Invoke();
+        for (int i = 0; i < m_gliches.Length; ++i)
         {
-            onMaximunLevelOfGlich.Invoke();
-            return true;
-        }
-        else
-        {
-            return false;
+            float level = (float)m_levelOfGlich / (float)m_gliches.Length;
+            m_gliches[i].glich(level);
         }
     }
 }

@@ -13,14 +13,13 @@ public class CharacterGlichScale : IGlich
     public int maxScaleInY = 10;
     private bool m_wait = false;
 
-    public override void fix()
+    public override void glich(float level)
     {
-
-    }
-
-    public override void glich()
-    {
-
+        maxScaleInX = maxScaleInY = (int)level*10;
+        if (level > 0)
+            m_enabled = true;
+        else
+            m_enabled = false;
     }
 
     // Start is called before the first frame update

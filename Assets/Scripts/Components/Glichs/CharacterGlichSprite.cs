@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterGlichTexture : IGlich
+public class CharacterGlichSprite : IGlich
 {
     [Range(1,10)]
     public float amountOfGlich = 1;
     public bool m_enabled = false;
-    public Image m_image;
+    public SpriteRenderer m_image;
     private bool m_wait = false;
     public Sprite[] m_glichesSprite;
     Sprite m_originalSprite;
@@ -17,7 +17,7 @@ public class CharacterGlichTexture : IGlich
     public override void glich(float level)
     {
         amountOfGlich = level*10;
-        if (level > 0)
+        if (amountOfGlich > 0)
             m_enabled = true;
         else
             m_enabled = false;
