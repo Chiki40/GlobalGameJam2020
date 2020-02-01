@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: 3fe006a2a432b4e1b88bc7871ae78202
   - enabled: 1
+    path: Assets/Scenes/GenderSelection.unity
+    guid: d0e8b6a4af05b4f849f30dc159afa8bd
+  - enabled: 1
+    path: Assets/Scenes/Initial.unity
+    guid: 89f9b0343b1974af2a90a4f195609621
+  - enabled: 1
     path: Assets/Scenes/Nivel/LitteratureClub.unity
     guid: 154aba4b5b709c54181ffd7bcbd08a3c
+  - enabled: 1
+    path: Assets/Scenes/Nivel/ChessClub.unity
+    guid: e09505559ec90e045afe5137f2bfc803
   m_configObjects: {}

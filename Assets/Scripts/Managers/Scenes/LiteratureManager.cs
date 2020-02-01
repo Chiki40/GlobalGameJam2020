@@ -69,11 +69,6 @@ public class LiteratureManager : MonoBehaviour
 
     public void pulsadoEnTexto()
     {
-        if (!_genericManager.AllPistasConocidas())
-        {
-            return;
-        }
-
         int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
         if (!inputAllreadyShow)
         {
