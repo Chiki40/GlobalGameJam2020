@@ -13,6 +13,7 @@ public class TestJson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.A))
         {
             List<Tuple<string, string>> lista = new List<Tuple<string, string>>();
@@ -40,5 +41,6 @@ public class TestJson : MonoBehaviour
                 Debug.Log("la palabra real es =>" + v.Item2);
             }
         }
+        */
     }
 }

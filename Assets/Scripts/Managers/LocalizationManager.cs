@@ -14,41 +14,33 @@ public class LocalizationManager : MonoBehaviour
         _JSONObject = MiniJSON.Json.Deserialize(textFile.text) as Dictionary<string, object>;
     }
 
-    public string GetString(string key, ref List<Tuple<string, string>> palabrasEspeciales)
+    public string GetString(string key, ref Tuple<string, string> palabrasEspeciales, ref bool withPalabraEspecial)
     {
         object result = null;
         _JSONObject.TryGetValue(key, out result);
         string resultString = (string)result;
 
-        int specialWords = 0;
-        {
-            string keyStart = "<specialNum>";
-            string keyEnd = "</specialNum>";
-            string specialWords_str = getSpecialValue(ref resultString, keyStart, keyEnd, true);
-            if(specialWords_str.Length > 0)
-            {
-                specialWords = Int32.Parse(specialWords_str);
-            }
-        }  
-        
-        for(int i = 0; i < specialWords; ++i)
-        {
-            string keyStart = "<K" + i + ">";
-            string keyEnd = "</K" + i + ">";
-            string palabra = getSpecialValue(ref resultString, keyStart, keyEnd, false);
-            string palabraPuzzle = getSpecialValue(ref palabra, "<value>", "</value>", true);//here there is the value only
-            //make string beautiful
-            string str_to_replace = keyStart + palabra + "<value>" + palabraPuzzle + "</value>" + keyEnd;
-            resultString = resultString.Replace(str_to_replace, palabra);
+        string keyStart = "<specialword>";
+        string keyEnd = "</specialword>";
 
-            Tuple<string, string> tupla = new Tuple<string, string>(palabra, palabraPuzzle);
-            palabrasEspeciales.Add(tupla);
+        withPalabraEspecial = false;
+
+        string specialWord = getSpecialValue(ref resultString, keyStart, keyEnd);
+        if(specialWord.Length > 0)
+        {
+            withPalabraEspecial = true;
+            string solucionPuzzle = getSpecialValue(ref specialWord, "<solution>", "</solution>");
+            //clean special world
+            string stringToClean = specialWord + "<solution>" + solucionPuzzle + "</solution>";
+            resultString = resultString.Replace(stringToClean, specialWord);
+
+            Tuple<string, string> newTuple = new Tuple<string, string>(specialWord, solucionPuzzle);
+            palabrasEspeciales = newTuple;
         }
-
         return resultString;
     }
 
-    private string getSpecialValue(ref string originaString, string startString, string endString, bool removeAll)
+    private string getSpecialValue(ref string originaString, string startString, string endString)
     {
         if (originaString.Contains(startString) && originaString.Contains(endString))
         {
@@ -57,11 +49,6 @@ public class LocalizationManager : MonoBehaviour
             int end = originaString.IndexOf(endString, start);
 
             string value = originaString.Substring(start, end - start);
-            if (removeAll)
-            {
-                string totalSubString = startString + value + endString;
-                originaString = originaString.Replace(totalSubString, "");
-            }
             return value;
         }
         return "";
