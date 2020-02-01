@@ -119,13 +119,10 @@ public class LiteratureManager : MonoBehaviour
     {
         Debug.Log("quitamos un glich");
         --_numGlich;
+        _gliches[_numGlich].fixImage();
         if (_numGlich <= 0)
         {
             Debug.Log("Todos los glich arreglados");
-        }
-        else
-        {
-            _gliches[_numGlich].fixImage();
         }
     }
 
@@ -155,8 +152,9 @@ public class LiteratureManager : MonoBehaviour
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
+        _gliches[_numGlich].glich();
         ++_numGlich;
-        if (_numGlich > _gliches.Length)
+        if (_numGlich >= _gliches.Length)
         {
             Debug.Log("game over");
             Scene scene = SceneManager.GetActiveScene();
@@ -164,7 +162,7 @@ public class LiteratureManager : MonoBehaviour
         }
         else
         {
-            _gliches[_numGlich].glich();
+            
         }
 
     }
