@@ -81,18 +81,24 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("GAME OVER!");
         _currentLevel = null;
-        StartCoroutine(WonOrLostCoroutine());
+        StartCoroutine(LostCoroutine());
     }    
 
     public void Victory()
     {
         Debug.Log("VICTORY!");
-        StartCoroutine(WonOrLostCoroutine());
+        StartCoroutine(WonCoroutine());
     }
 
-    private IEnumerator WonOrLostCoroutine()
+    private IEnumerator WonCoroutine()
     {
         yield return new WaitForSeconds(_timeToExitLevels);
         SceneManager.LoadScene("Menu");
-    }    
+    }
+
+    private IEnumerator LostCoroutine()
+    {
+        yield return new WaitForSeconds(_timeToExitLevels);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }      
 }
