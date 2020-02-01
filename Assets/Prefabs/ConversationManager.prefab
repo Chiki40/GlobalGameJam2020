@@ -400,6 +400,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _textPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: pulsadoEnTexto
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _checkWord:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: CheckPalabra
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3408089806673764899
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +536,6 @@ RectTransform:
   - {fileID: 697230131116205952}
   - {fileID: 9038979488139107016}
   - {fileID: 5055533270546910463}
-  - {fileID: 5055533270080611532}
   m_Father: {fileID: 5199888262749793748}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -639,241 +666,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &8066033294831883129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6862011711716429942}
-    m_Modifications:
-    - target: {fileID: 3015320696348702644, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 231.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -57.450027
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 462.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 114.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702646, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_Name
-      value: InputField2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320696348702646, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697153916607, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 77
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697153916607, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697153916607, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 77
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697509492388, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 77
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697509492388, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3015320697509492388, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 77
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: m_wordToCheck
-      value: bloste
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PalabraCorrecta
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PalabraIncorrecta
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
-        type: 3}
-      propertyPath: wordIsCorrect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 67c569d5cc04d3a468db48b189c9955f, type: 3}
---- !u!224 &5055533270080611532 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3015320696348702645, guid: 67c569d5cc04d3a468db48b189c9955f,
-    type: 3}
-  m_PrefabInstance: {fileID: 8066033294831883129}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8066033295430875978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -999,7 +791,7 @@ PrefabInstance:
     - target: {fileID: 3015320696348702646, guid: 67c569d5cc04d3a468db48b189c9955f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3015320697153916607, guid: 67c569d5cc04d3a468db48b189c9955f,
         type: 3}
@@ -1039,6 +831,11 @@ PrefabInstance:
     - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
         type: 3}
       propertyPath: wordIsIncorrect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
+        type: 3}
+      propertyPath: _checkWord.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3161563558846007549, guid: 67c569d5cc04d3a468db48b189c9955f,
