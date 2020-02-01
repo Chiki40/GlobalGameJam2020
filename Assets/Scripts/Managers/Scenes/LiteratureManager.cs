@@ -6,10 +6,19 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+struct Pharse
+{
+    public string allString;
+    public Tuple<string, string> puzzle;
+    public bool withPuzzle;
+}
+
 public class LiteratureManager : MonoBehaviour
 {
     [SerializeField]
     private ConversationManager _conversationManager = null;
+    [SerializeField]
+    private LocalizationManager _localizationManager = null;
 
     public GameObject _personaje;
     public List<GameObject> _pistas;
@@ -22,6 +31,11 @@ public class LiteratureManager : MonoBehaviour
     private int currentFrase = 0;
     public GlichComponent[] _gliches;
 
+    public List<string> _keysBoy;
+    public List<string> _keysGirl;
+
+    private List<Pharse> phrasesBoy;
+    private List<Pharse> phrasesGirl;
 
     private void Awake()
     {
@@ -29,6 +43,39 @@ public class LiteratureManager : MonoBehaviour
         {
              Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _conversationManager not set");
             return;
+        }
+
+        if (_localizationManager == null)
+        {
+            Debug.LogError("[LiteratureManager.Awake] ERROR: Serializable _localizationManager not set");
+            return;
+        }
+
+        //read boy keys
+        for(int i = 0; i < _keysBoy.Count; ++i)
+        {
+            Tuple<string, string> puzzle = new Tuple<string, string>("","");
+            bool withPuzzle = false;
+            string allString = _localizationManager.GetString(_keysBoy[i], ref puzzle, ref withPuzzle);
+
+            Pharse p;
+            p.allString = allString;
+            p.puzzle = puzzle;
+            p.withPuzzle = withPuzzle;
+            phrasesBoy.Add(p);
+        }
+
+        for (int i = 0; i < _keysBoy.Count; ++i)
+        {
+            Tuple<string, string> puzzle = new Tuple<string, string>("", "");
+            bool withPuzzle = false;
+            string allString = _localizationManager.GetString(_keysGirl[i], ref puzzle, ref withPuzzle);
+
+            Pharse p;
+            p.allString = allString;
+            p.puzzle = puzzle;
+            p.withPuzzle = withPuzzle;
+            phrasesGirl.Add(p);
         }
     }
 
