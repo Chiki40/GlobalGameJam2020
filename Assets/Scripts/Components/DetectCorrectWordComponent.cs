@@ -12,7 +12,7 @@ public class DetectCorrectWordComponent : MonoBehaviour
 
     public void checkWord(InputField text)
     {
-        if (text.text == m_wordToCheck)
+        if (text.text.ToLower() == m_wordToCheck.ToLower())
             wordIsCorrect.Invoke();
         else
             wordIsIncorrect.Invoke();
