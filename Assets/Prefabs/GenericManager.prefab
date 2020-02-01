@@ -396,6 +396,67 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &3036599254755804100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7393706736496687916}
+  - component: {fileID: 1746659649821788678}
+  m_Layer: 0
+  m_Name: GlichManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7393706736496687916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036599254755804100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8751283310157002113}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746659649821788678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036599254755804100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d84ce093345e65409afb7c71d1fa199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gliches: []
+  onMaximunLevelOfGlich:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8751283310157002112}
+        m_MethodName: OnGameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onMinimunLevelOfGlich:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4043564066906065136
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6821604975007562495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1490,6 +1551,7 @@ Transform:
   m_Children:
   - {fileID: 8751283309066409409}
   - {fileID: 8751283309676504332}
+  - {fileID: 7393706736496687916}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1507,6 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _conversationManager: {fileID: 8997949329451784967}
   _localizationManager: {fileID: 873851808112865829}
+  _glichManager: {fileID: 1746659649821788678}
   _endConversation:
     m_PersistentCalls:
       m_Calls: []

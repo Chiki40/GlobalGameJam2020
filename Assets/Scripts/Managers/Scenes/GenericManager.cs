@@ -10,6 +10,8 @@ public class GenericManager : MonoBehaviour
     private ConversationManager _conversationManager = null;
     [SerializeField]
     private LocalizationManager _localizationManager = null;
+    [SerializeField]
+    private GlichManager _glichManager = null;
 
     public UnityEvent _endConversation;
     public UnityEvent _endPartConversation;
@@ -166,12 +168,12 @@ public class GenericManager : MonoBehaviour
 
     public void CrearGlich()
     {
-
+        _glichManager.AddLevelOfGlich();
     }
 
     public void EliminarGlich()
     {
-
+        _glichManager.ReduceLevelOfGlich();
     }
 
     public void OnGameOver()
