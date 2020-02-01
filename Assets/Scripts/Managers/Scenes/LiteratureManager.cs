@@ -8,9 +8,14 @@ public class LiteratureManager : MonoBehaviour
     public GameObject _personaje;
     public GameObject _personajeBig;
     public List<GameObject> _pistas;
+    public List<GameObject> _textInput;
     private List<bool> _pistaConocida;
     private int _numGlich = 0;
     public int _maxGlich = 5;
+    private int _actualPalabrasCorrectas = 0;
+    public int _maxPalabrasCorrectas = 5;
+    private bool _allPistas = false;
+    private int currentFrase = 0;
 
 
     // Start is called before the first frame update
@@ -27,7 +32,7 @@ public class LiteratureManager : MonoBehaviour
 
     public void PrimerMensaje()
     {
-        FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Primer mensaje", "BlOsTe", "UnA", "PoLlA", "CoMo", "Un", "PoStE" });
+        FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Primer mensaje", "Bloste, una polla como un poste" });
         MostrarPersonajeBig();
     }
 
@@ -49,41 +54,86 @@ public class LiteratureManager : MonoBehaviour
     {
         OcultarPersonajeBig();
     }
+    public void EndPartConversation()
+    {
+        //deactivate all
+        for( int i = 0; i < _textInput.Count; ++i)
+        {
+            _textInput[i].SetActive(false);
+        }
+
+        if (_allPistas)
+        {
+            //dependin the clue, we activate a different one
+            if (currentFrase == 1)
+            {
+                _textInput[0].SetActive(true);
+            }
+
+            if (currentFrase == 2)
+            {
+                _textInput[1].SetActive(true);
+            }
+            ++currentFrase;
+        }
+    }
 
     public void PistaConocida(int index)
     {
         _pistaConocida[index] = true;
     }
 
-    public void PulsadoElPersonaje()
+    public void PalabraCorrecta(int index)
     {
-        MostrarPersonajeBig();
-
-        bool todasLasPistas = _pistaConocida.TrueForAll(b => b == true);
-
-        if (!todasLasPistas)
+        if (_allPistas)
         {
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"Glich", "BlOsTe", "UnA", "PoLlA", "CoMo", "Un", "PoStE" });
-            CrearGlich();
-            ++_numGlich;
-
-            if(_numGlich > _maxGlich)
+            ++_actualPalabrasCorrectas;
+            if (_actualPalabrasCorrectas >= _maxPalabrasCorrectas)
             {
-                Debug.Log("game over");
-                Scene scene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(scene.name);
+                FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Moraleja final", "eres un desgraciado", "ojala tengas que hacer un build de luces de unity" });
+                Debug.Log("has acabado bien el nivel");
             }
         }
         else
         {
-            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "TODO bien", "BLOSTE", "UNA", "POLLA", "COMO", "UN", "POSTE" });
-            Debug.Log("has acaado bien el nivel");
+            Debug.Log("aunque la palabra es correcta, no tienes todas las pistas");
+            PalabraIncorrecta();
+        }
+    }
+
+    public void PalabraIncorrecta()
+    {
+        CrearGlich();
+    }
+
+    public void PulsadoElPersonaje()
+    {
+        MostrarPersonajeBig();
+
+        _allPistas  = _pistaConocida.TrueForAll(b => b == true);
+
+        if (!_allPistas)
+        {
+            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() {"**Glich**", "No tienes todas las pistas" });
+            CrearGlich();
+        }
+        else
+        {
+            currentFrase = 0;
+            FindObjectOfType<ConversationManager>().SetConversation(new List<string>() { "Texto final bien, mas te vale poner siempre bloste", "Bloste", "Bloste"});
         }
     }
     
     private void CrearGlich()
     {
         Debug.Log("creamos un glich");
-        
+        ++_numGlich;
+        if (_numGlich > _maxGlich)
+        {
+            Debug.Log("game over");
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+
     }
 }

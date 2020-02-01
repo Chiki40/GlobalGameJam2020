@@ -20,6 +20,9 @@ public class ConversationManager : MonoBehaviour
     [SerializeField]
     private UnityEvent _endCallback;
 
+    [SerializeField]
+    private UnityEvent _nextCallback;
+
     private void Awake()
     {
         _currentConversationIndex = -1;
@@ -61,11 +64,16 @@ public class ConversationManager : MonoBehaviour
 
     public void NextMessage()
     {
+        Debug.Log("DAni, cuando leas esto, no deberia poder saltarse asi a la ligera, hay que leerlo todo bien");
         if (_dialogText != null && _dialogTextBox != null && _dialogTextBox.activeInHierarchy && _dialogText.enabled && _currentConversationTexts != null)
         {
             if (_currentConversationIndex < _currentConversationTexts.Count - 1)
             {
                 ++_currentConversationIndex;
+                if(_nextCallback != null)
+                {
+                    _nextCallback.Invoke();
+                }
                 _currentConversationShownChar = 0;
                 _timeRemainingForNextShownChar = _timeBetweenShownChars;
                 if (_currentConversationTexts[_currentConversationIndex].Length > 0)
