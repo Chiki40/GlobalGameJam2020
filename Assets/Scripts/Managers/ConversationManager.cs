@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using TMPro;
 
 public class ConversationManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _dialogTextBox = null;
     [SerializeField]
-    private Text _dialogText = null;
+    private TextMeshProUGUI _dialogText = null;
     [SerializeField]
     private float _timeBetweenShownChars = 0.1f;
     private List<string> _currentConversationTexts = null;
@@ -46,6 +46,8 @@ public class ConversationManager : MonoBehaviour
         }
         _currentConversationTexts = conversationTexts;
         _currentConversationIndex = -1;
+        _currentConversationShownChar = 0;
+        _timeRemainingForNextShownChar = _timeBetweenShownChars;
         NextMessage();
     }
 
@@ -64,26 +66,29 @@ public class ConversationManager : MonoBehaviour
 
     public void NextMessage()
     {
-        Debug.Log("DAni, cuando leas esto, no deberia poder saltarse asi a la ligera, hay que leerlo todo bien");
         if (_dialogText != null && _dialogTextBox != null && _dialogTextBox.activeInHierarchy && _dialogText.enabled && _currentConversationTexts != null)
         {
-            if (_currentConversationIndex < _currentConversationTexts.Count - 1)
+            // First message or finished message? We can set it
+            if (_currentConversationIndex == -1 || _currentConversationShownChar == _currentConversationTexts[_currentConversationIndex].Length - 1)
             {
-                ++_currentConversationIndex;
-                if(_nextCallback != null)
+                if (_currentConversationIndex < _currentConversationTexts.Count - 1)
                 {
-                    _nextCallback.Invoke();
+                    ++_currentConversationIndex;
+                    if(_nextCallback != null)
+                    {
+                        _nextCallback.Invoke();
+                    }
+                    _currentConversationShownChar = 0;
+                    _timeRemainingForNextShownChar = _timeBetweenShownChars;
+                    if (_currentConversationTexts[_currentConversationIndex].Length > 0)
+                    {
+                        _dialogText.text = _currentConversationTexts[_currentConversationIndex][0].ToString();
+                    }
                 }
-                _currentConversationShownChar = 0;
-                _timeRemainingForNextShownChar = _timeBetweenShownChars;
-                if (_currentConversationTexts[_currentConversationIndex].Length > 0)
+                else
                 {
-                    _dialogText.text = _currentConversationTexts[_currentConversationIndex][0].ToString();
+                    EndConversation();
                 }
-            }
-            else
-            {
-                EndConversation();
             }
         }
     }
