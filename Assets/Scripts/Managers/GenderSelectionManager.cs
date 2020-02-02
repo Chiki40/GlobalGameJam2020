@@ -8,6 +8,10 @@ public class GenderSelectionManager : MonoBehaviour
 
     [SerializeField]
     private float _timeBetweenSounds = 5.0f;
+    [SerializeField]
+    private float _timeToStart = 3.0f;
+    [SerializeField]
+    private Animator _fadeOutAnimator = null;    
     private void Start()
     {
         UtilSound.instance.PlaySound("INTRIGANTE", 1.0f, true);
@@ -39,6 +43,14 @@ public class GenderSelectionManager : MonoBehaviour
 
     private void StartGame()
     {
+        StartCoroutine(StartGameCoroutine());
+    }
+
+    private IEnumerator StartGameCoroutine()
+    {
+        _fadeOutAnimator.enabled = true;
+        UtilSound.instance.PlaySound("door");
+        yield return new WaitForSeconds(_timeToStart);
         SceneManager.LoadScene("Initial");
     }
 
