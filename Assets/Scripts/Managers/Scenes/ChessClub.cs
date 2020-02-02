@@ -33,7 +33,7 @@ public class ChessClub : MonoBehaviour
 
     private void Start()
     {
-        _genericManager.ShowPregame("EndText_2");
+        _genericManager.ShowPregame("StartText_2");
         EnableClickableComponent();
         _fondos[0].SetActive(true);
         _fondos[1].SetActive(false);

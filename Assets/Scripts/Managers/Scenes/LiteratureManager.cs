@@ -24,7 +24,7 @@ public class LiteratureManager : MonoBehaviour
 
     private void Start()
     {
-        _genericManager.ShowPregame("EndText_1");
+        _genericManager.ShowPregame("StartText_1");
     }
 
     public void MostrarPersonaje()
