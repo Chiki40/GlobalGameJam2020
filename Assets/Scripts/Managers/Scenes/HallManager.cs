@@ -68,10 +68,17 @@ public class HallManager : MonoBehaviour
 
     public void ShowObjectionButton()
     {
-        int index = _genericManager._conversationManager.getCurrentPhraseIndex();
-        if (index >= 0)
+        if (_genericManager.AllPistasConocidas())
         {
-            _objetableButton.SetActive(true);
+            int index = _genericManager._conversationManager.getCurrentPhraseIndex();
+            if (index >= 0 && index < 6)
+            {
+                _objetableButton.SetActive(true);
+            }
+        }
+        else
+        {
+            _objetableButton.SetActive(false);
         }
     }
 

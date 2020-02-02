@@ -3882,12 +3882,12 @@ PrefabInstance:
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: _keysBoy.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: _keysGirl.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
@@ -4093,6 +4093,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _keysGirl.Array.data[2]
       value: hall_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _keysBoy.Array.data[7]
+      value: hall_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _keysGirl.Array.data[7]
+      value: hall_8
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
