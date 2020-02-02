@@ -39,7 +39,9 @@ public class PalizaMiniManager : MonoBehaviour
                 {
                     if (GameController.GetInstance().HasCompletedLevel(levelLoader.sceneToLoad))
                     {
-                        levelLoader.gameObject.SetActive(false);
+                        levelLoader.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                        // Enable check
+                        levelLoader.gameObject.transform.GetChild(1).gameObject.SetActive(true);
                     }
                 }
             }
