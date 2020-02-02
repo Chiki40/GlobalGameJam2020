@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PalizaMiniManager : MonoBehaviour
@@ -12,7 +13,8 @@ public class PalizaMiniManager : MonoBehaviour
     [SerializeField]
     private GameObject _yearBook = null;
     [SerializeField]
-    private GameObject _levelSelection = null;    
+    private GameObject _levelSelection = null;
+    public UnityEvent onPalizaEnd;
 
     private IEnumerator Start()
     {
@@ -28,6 +30,7 @@ public class PalizaMiniManager : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
             _yearBook.SetActive(true);
             _animator.enabled = true;
+            onPalizaEnd.Invoke();
         }
         else
         {
