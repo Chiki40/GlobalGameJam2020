@@ -24,6 +24,6 @@ public class TitleScreenManager : MonoBehaviour
 
     private void GoToNextScene()
     {
-        SceneManager.LoadScene("Paliza1");
+        SceneManager.LoadScene("GenderSelection");
     }
 }
