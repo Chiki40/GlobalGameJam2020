@@ -57,7 +57,7 @@ public class PalizaMiniManager : MonoBehaviour
                 }
             }
             _levelSelection.SetActive(true);
-            _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            _blackScreen.gameObject.SetActive(false);
         }
     }
 
