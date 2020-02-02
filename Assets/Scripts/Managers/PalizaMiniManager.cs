@@ -11,9 +11,12 @@ public class PalizaMiniManager : MonoBehaviour
     private Image _blackScreen = null;
     [SerializeField]
     private GameObject _yearBook = null;
+    [SerializeField]
+    private GameObject _levelSelection = null;    
 
     private IEnumerator Start()
     {
+        // First time
         if (GameController.GetInstance().GetLevelsCompleted() == 0)
         {       
             yield return new WaitForSeconds(1.0f);
@@ -28,12 +31,28 @@ public class PalizaMiniManager : MonoBehaviour
         }
         else
         {
+            // Disable completed levels
+            for (int i = 0; i < _levelSelection.transform.childCount; ++i)
+            {
+                LevelLoader levelLoader = _levelSelection.transform.GetChild(i).GetComponent<LevelLoader>();
+                if (levelLoader)
+                {
+                    if (GameController.GetInstance().HasCompletedLevel(levelLoader.sceneToLoad))
+                    {
+                        levelLoader.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                        // Enable check
+                        levelLoader.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    }
+                }
+            }
+            _levelSelection.SetActive(true);
             _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         }
     }
 
     public void YearBookPicked()
     {
-
+        _yearBook.SetActive(false);
+        _levelSelection.SetActive(true);
     }
 }

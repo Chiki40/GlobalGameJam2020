@@ -61,6 +61,11 @@ public class GameController : MonoBehaviour
         return levelsCompleted;
     }
 
+    public bool HasCompletedLevel(string level)
+    {
+        return _completedLevels[level];
+    }
+
     public void LevelCompleted()
     {
         _completedLevels[_currentLevel] = true;
