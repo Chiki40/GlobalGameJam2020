@@ -24,9 +24,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Nivel/Hall.unity
     guid: c8e1a0d6647cba0408e1d67be4090085
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 3fe006a2a432b4e1b88bc7871ae78202
-  - enabled: 1
     path: Assets/Scenes/Final Scene.unity
     guid: 551e8bcdd7da2544db436034e07061a0
+  - enabled: 1
+    path: Assets/Scenes/Mirror.unity
+    guid: 03543be72b341421da122ff1ecfdc695
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 3fe006a2a432b4e1b88bc7871ae78202
   m_configObjects: {}

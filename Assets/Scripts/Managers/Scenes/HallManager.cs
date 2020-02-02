@@ -22,7 +22,7 @@ public class HallManager : MonoBehaviour
 
     private void Start()
     {
-        _genericManager.ShowPregame("EndText_3");
+        _genericManager.ShowPregame("StartText_3");
         HideButtons();
         ShowObjectionButton();
     }
@@ -74,6 +74,10 @@ public class HallManager : MonoBehaviour
             if (index >= 0 && index < 6)
             {
                 _objetableButton.SetActive(true);
+            }
+            else
+            {
+                _objetableButton.SetActive(false);
             }
         }
         else

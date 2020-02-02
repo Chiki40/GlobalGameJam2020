@@ -24,7 +24,7 @@ public class LiteratureManager : MonoBehaviour
 
     private void Start()
     {
-        _genericManager.ShowPregame("EndText_1");
+        _genericManager.ShowPregame("StartText_1");
     }
 
     public void MostrarPersonaje()
@@ -54,6 +54,7 @@ public class LiteratureManager : MonoBehaviour
         {
             _genericManager.OnLevelCompleted("EndText_1");
         }
+        _alphabetManager.resetAlphabet();
     }
 
     public void EndPartConversation()
@@ -66,6 +67,7 @@ public class LiteratureManager : MonoBehaviour
         {
             _genericManager._conversationManager.Block(true);
         }
+        _alphabetManager.resetAlphabet();
     }
 
     public void CheckPalabra()

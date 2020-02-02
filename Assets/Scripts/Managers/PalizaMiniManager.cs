@@ -34,6 +34,7 @@ public class PalizaMiniManager : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
             _yearBook.SetActive(true);
             _animator.enabled = true;
+            _conversationManager.gameObject.SetActive(true);
             _conversationManager.SetConversation(new List<string>(){"holasdfdsfdsfdsfdsfdsffdsfdsfdsfdsfsdfsdfsdfsdfsd", "pusdfsdfdsfsdftada"});
             onPalizaEnd.Invoke();
             yield return null;
@@ -57,7 +58,7 @@ public class PalizaMiniManager : MonoBehaviour
                 }
             }
             _levelSelection.SetActive(true);
-            _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            _blackScreen.gameObject.SetActive(false);
         }
     }
 
