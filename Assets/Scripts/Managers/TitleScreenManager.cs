@@ -10,6 +10,7 @@ public class TitleScreenManager : MonoBehaviour
     // Start is called before the first frame update
     private IEnumerator Start()
     {
+        GameController.GetInstance().Reset();
         yield return new WaitForSeconds(_timeInMenu);
         GoToNextScene();
     }

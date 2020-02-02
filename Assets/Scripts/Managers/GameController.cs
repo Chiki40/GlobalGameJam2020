@@ -40,6 +40,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        for (int i = 0; i < _levels.Length; ++i)
+        {
+            _completedLevels[_levels[i]] = false;
+        }
+    }
+
     public void StartLevel(string level)
     {
         if (_currentLevel == null)
