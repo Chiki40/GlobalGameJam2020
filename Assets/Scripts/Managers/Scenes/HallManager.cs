@@ -18,6 +18,7 @@ public class HallManager : MonoBehaviour
     public List<ListString> opciones;
     public List<int> correctOption;
     public GameObject _objetableButton;
+    public List<GameObject> _cartelesGrandes;
     int actualCorrectas = 0;
 
     private void Start()
@@ -92,5 +93,18 @@ public class HallManager : MonoBehaviour
         {
             Debug.Log("ya he acabado el nivel");
         }
+    }
+
+    public void PressCartelGrande()
+    {
+        foreach(var v in _cartelesGrandes)
+        {
+            v.SetActive(false);
+        }
+    }
+
+    public void PistaSeleccionada(int index)
+    {
+        _cartelesGrandes[index].SetActive(true);
     }
 }

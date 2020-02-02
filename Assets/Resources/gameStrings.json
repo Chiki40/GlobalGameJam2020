@@ -19,19 +19,19 @@
 	"Text9_F": "Llegué, v1 y <specialWord>WFÑDJ<solution>VENCI</solution></specialWord>",
 	"Text10_M": "De8o irme, querido <specialWord>WZIUÑCBIU<solution>ORANGUTAN</solution></specialWord>.",
 	"Text10_F": "De8o irme, querida <specialWord>ITMJI<solution>AMEBA</solution></specialWord>.",
-	"EndText_1_M": "Colorón colorado",
-	"EndText_1_F": "Colorón colorado",
-	"EndText_2_M": "Este cuento se ha acabado",
-	"EndText_2_F": "Este cuento se ha acabado",
-	"EndText_3_F": "...y no hemos reparado en gastos.",
-	"EndText_3_M": "...y no hemos reparado en gastos.",
+	"EndText_1_M":"Colorón colorado",
+	"EndText_1_F":"Colorón colorado",
+	"EndText_2_M":"Este cuento se ha acabado",
+	"EndText_2_F":"Este cuento se ha acabado",
+	"EndText_3_F":"...y no hemos reparado en gastos.",
+	"EndText_3_M":"...y no hemos reparado en gastos.",
 
-	"chess_1_in": "¡Vaya, no sabía que era el día del novato!",
-	"chess_1_out": "¡Maldición! ¿¡Cómo lo hiciste, repugnante cerebro de mosquito!?",
-	"chess_2_in": "Tu rey está entre la espalda y la pared ¿eh? ",
-	"chess_2_out": "¡IMPOSIBLE! ¡Cómo pude bajar la retaguardia así!",
-	"chess_3_in": "¡Vaya! Esto sí que no me lo esperaba. Has llegado lejos...¡pero se acabó tu suerte, PEÓN! A la reina no la ganarás.",
-	"chess_3_out": "¿QUÉ? ¡Mi reino por UN PEÓN! ¡ME LAS PAGARÁS!"
-
+	"chess_1_in":"Mover esos peones parece lo más seguro",
+	"chess_1_out":"¡Ja! ¡Gané! Como debe ser...",
+	"chess_2_in":"Estás amurallado entre la espalda y la pared ¿eh?",
+	"chess_2_out":"(solución) - Obviamente. ¡Victoria!",
+	"chess_3_in":"¡Vaya! Es difícil ver a un simple peón tan cerca de la realeza...",
+	"chess_3_out":"¿QUÉ? ¡NO! ¡He sido vencida con una jugada de novatos! Mi reino... ¡ME LAS PAGARÁS!"
+	
 
 }
