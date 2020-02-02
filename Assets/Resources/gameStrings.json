@@ -5,8 +5,8 @@
 	"Text2_F": "Bueno, bueno... Una <specialWord>VÑWNBEPK<solution>MENDRUGA</solution></specialWord>, como el pan. Pero no sólo de pan vive el hombre, sino de toda palabra que sale de la boca de d10s.",
 	"Text3_M": "Da igual, no importa. También los hombres tienden a creer aquello que les conv13ne. Yo ya sé que tú eres un <specialWord>ÑEHGB/<solution>BRUTO</solution></specialWord> ejemplar.",
 	"Text3_F": "Da igual, no importa. También los hombres tienden a creer aquello que les conv13ne. Yo ya sé que tú eres una <specialWord>ÑEHGN<solution>BRUTA</solution></specialWord> ejemplar.",
-	"Text4_M": "Nadie es tan valiente que no sea <specialWord>TIVXYVFEHS/<solution>PERTURBADO</solution></specialWord> por 4lgo inesperado, como yo ahora que te miro a los ojos. ",
-	"Text4_F": "Nadie es tan valiente que no sea <specialWord>TIVXYVFEHS/<solution>PERTURBADO</solution></specialWord> por 4lgo inesperado, como yo ahora que te miro a los ojos.",
+	"Text4_M": "Nadie es tan valiente que no sea <specialWord>TIVXYVFEHS<solution>PERTURBADO</solution></specialWord> por 4lgo inesperado, como yo ahora que te miro a los ojos. ",
+	"Text4_F": "Nadie es tan valiente que no sea <specialWord>TIVXYVFEHS<solution>PERTURBADO</solution></specialWord> por 4lgo inesperado, como yo ahora que te miro a los ojos.",
 	"Text5_M": "He vivido lo suficiente, tanto en años como en logros.",
 	"Text5_F": "He vivido lo suficiente, tanto en años como en logros.",
 	"Text6_M": "Y, si algo he aprendido entre todos los múltiples idiomas y lenguajes, incluso el de C#; es que es ley de gu3rra que los vencedores traten a los vencidos a su <specialWord>DPWRMR<solution>ANTOJO</solution></specialWord>.",
@@ -17,10 +17,13 @@
 	"Text8_F": "Y no hay mayor <specialWord>DRFQRQCFÑ/<solution>PERDEDORA</solution></specialWord> que la que mis ret1n4s reflejan en este preciso instante.",
 	"Text9_M": "Llegué, v1 y <specialWord>WFÑDJ<solution>VENCI</solution></specialWord>",
 	"Text9_F": "Llegué, v1 y <specialWord>WFÑDJ<solution>VENCI</solution></specialWord>",
-	"Text10_M": "De8o irme, querido <specialWord>WZIUÑCBIU<solution>ORANGUTAN </solution></specialWord>.",
+	"Text10_M": "De8o irme, querido <specialWord>WZIUÑCBIU<solution>ORANGUTAN</solution></specialWord>.",
 	"Text10_F": "De8o irme, querida <specialWord>ITMJI<solution>AMEBA</solution></specialWord>.",
-	"EndText_1":"Colorón colorado",
-	"EndText_2":"Este cuento se ha acabado",
-	"EndText_3":"...y no hemos reparado en gastos."
+	"EndText_1_M":"Colorón colorado",
+	"EndText_1_F":"Colorón colorado",
+	"EndText_2_M":"Este cuento se ha acabado",
+	"EndText_2_F":"Este cuento se ha acabado",
+	"EndText_3_F":"...y no hemos reparado en gastos.",
+	"EndText_3_M":"...y no hemos reparado en gastos."
 
 }
