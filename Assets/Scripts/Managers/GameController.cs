@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     private string[] _levels;
     private Dictionary<string, bool> _completedLevels = new Dictionary<string, bool>();
     private string _currentLevel = null;
+    private bool _alreadyLost = false;
     private static GameController _instance = null;
     public static GameController GetInstance()
     {
@@ -43,6 +44,7 @@ public class GameController : MonoBehaviour
     {
         if (_currentLevel == null)
         {
+            _alreadyLost = false;
             _currentLevel = level;
             SceneManager.LoadScene(level);
         }
@@ -90,9 +92,12 @@ public class GameController : MonoBehaviour
 
     public void LevelGameOver()
     {
-        Debug.Log("GAME OVER!");
-        _currentLevel = null;
-        StartCoroutine(LostCoroutine());
+        if (!_alreadyLost)
+        {
+            _alreadyLost = true;
+            Debug.Log("GAME OVER!");
+            StartCoroutine(LostCoroutine());            
+        }
     }    
 
     public void Victory()
@@ -111,5 +116,6 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(_timeToExitLevels);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        _alreadyLost = false;
     }      
 }

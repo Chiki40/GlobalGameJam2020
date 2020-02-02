@@ -565,6 +565,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1915927470, guid: e4d3adf05762148aabc4aa99e367743a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.29992676
+      objectReference: {fileID: 0}
     - target: {fileID: 1490400866546582688, guid: e4d3adf05762148aabc4aa99e367743a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -699,6 +703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Paliza
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490400866546582701, guid: e4d3adf05762148aabc4aa99e367743a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d3adf05762148aabc4aa99e367743a, type: 3}
