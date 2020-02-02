@@ -22,6 +22,7 @@ public class HallManager : MonoBehaviour
 
     private void Start()
     {
+        _genericManager.ShowPregame("EndText_3");
         HideButtons();
         ShowObjectionButton();
     }
@@ -67,10 +68,17 @@ public class HallManager : MonoBehaviour
 
     public void ShowObjectionButton()
     {
-        int index = _genericManager._conversationManager.getCurrentPhraseIndex();
-        if (index >= 0)
+        if (_genericManager.AllPistasConocidas())
         {
-            _objetableButton.SetActive(true);
+            int index = _genericManager._conversationManager.getCurrentPhraseIndex();
+            if (index >= 0 && index < 6)
+            {
+                _objetableButton.SetActive(true);
+            }
+        }
+        else
+        {
+            _objetableButton.SetActive(false);
         }
     }
 
@@ -83,7 +91,7 @@ public class HallManager : MonoBehaviour
     {
         if (actualCorrectas >= maxLevels)
         {
-            Debug.Log("ya he acabado el nivel");
+            _genericManager.OnLevelCompleted("EndText_3");
         }
     }
 
