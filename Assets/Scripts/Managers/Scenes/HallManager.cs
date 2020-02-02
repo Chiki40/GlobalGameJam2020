@@ -17,6 +17,7 @@ public class HallManager : MonoBehaviour
     public List<ListString> opciones;
     public List<int> correctOption;
     public GameObject _objetableButton;
+    public GameObject _nextButton;
     public List<GameObject> _cartelesGrandes;
     int actualCorrectas = 0;
 
@@ -54,6 +55,9 @@ public class HallManager : MonoBehaviour
             _genericManager.CrearGlich();
         }
         HideButtons();
+
+        _objetableButton.SetActive(false);
+        _nextButton.SetActive(true);    
     }
 
     private void HideButtons()
@@ -74,15 +78,18 @@ public class HallManager : MonoBehaviour
             if (index >= 0 && index <= 6)
             {
                 _objetableButton.SetActive(true);
+                _nextButton.SetActive(false);
             }
             else
             {
                 _objetableButton.SetActive(false);
+                _nextButton.SetActive(true);
             }
         }
         else
         {
             _objetableButton.SetActive(false);
+            _nextButton.SetActive(true);
         }
         HideButtons();
     }

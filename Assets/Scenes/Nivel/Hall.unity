@@ -1783,6 +1783,7 @@ MonoBehaviour:
     - 3:00
   correctOption: 00000000000000000000000000000000000000000000000000000000
   _objetableButton: {fileID: 174201863}
+  _nextButton: {fileID: 721790197}
   _cartelesGrandes:
   - {fileID: 352574183}
   - {fileID: 1536791048}
@@ -2116,6 +2117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e87291a41f74ce4086940c2a50f9c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &721790197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 272721537993695603, guid: 31135c470043b5d498604894b0dc5ca3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1657275365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738854459
 GameObject:
   m_ObjectHideFlags: 0
