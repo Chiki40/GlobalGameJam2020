@@ -42,7 +42,7 @@ public class AlphabetManager : MonoBehaviour
         IncreaseAlphabet();
     }
 
-    void resetAlphabet()
+    public void resetAlphabet()
     {
         foreach (var a in alphabets)
         {
