@@ -13,7 +13,6 @@ public class HallManager : MonoBehaviour
 {
     public GenericManager _genericManager;
     public int maxLevels;
-    public List<bool> isObjetable;
     public List<GameObject> botones;
     public List<ListString> opciones;
     public List<int> correctOption;
@@ -71,14 +70,7 @@ public class HallManager : MonoBehaviour
         int index = _genericManager._conversationManager.getCurrentPhraseIndex();
         if (index >= 0)
         {
-            if (isObjetable[index])
-            {
-                _objetableButton.SetActive(true);
-            }
-            else
-            {
-                _objetableButton.SetActive(false);
-            }
+            _objetableButton.SetActive(true);
         }
     }
 
