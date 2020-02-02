@@ -22,6 +22,11 @@ public class LiteratureManager : MonoBehaviour
     private bool inputAllreadyShow = false;
     private int _actualPalabrasCorrectas = 0;
 
+    private void Start()
+    {
+        _genericManager.ShowPregame("EndText_1");
+    }
+
     public void MostrarPersonaje()
     {
         //_genericManager.ShowMensaje();

@@ -22,6 +22,7 @@ public class HallManager : MonoBehaviour
 
     private void Start()
     {
+        _genericManager.ShowPregame("EndText_3");
         HideButtons();
         ShowObjectionButton();
     }
