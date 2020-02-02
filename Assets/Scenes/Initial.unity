@@ -704,56 +704,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: _yearBook
-      value: 
-      objectReference: {fileID: 131387124}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1003188430}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 947096901}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582701, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: m_Name
-      value: YearBook
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -804,15 +754,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5365462902773925068, guid: 02ba5acc3ff4d469c9f8707ae119c971,
         type: 3}
       propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1902304094077850861}
-    - target: {fileID: 5365462902773925068, guid: 02ba5acc3ff4d469c9f8707ae119c971,
+    - target: {fileID: 5365462902773925069, guid: 02ba5acc3ff4d469c9f8707ae119c971,
         type: 3}
-      propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: YearBookPicked
+      propertyPath: m_Name
+      value: YearBook
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02ba5acc3ff4d469c9f8707ae119c971, type: 3}
