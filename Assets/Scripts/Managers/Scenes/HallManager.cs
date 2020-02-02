@@ -75,11 +75,16 @@ public class HallManager : MonoBehaviour
             {
                 _objetableButton.SetActive(true);
             }
+            else
+            {
+                _objetableButton.SetActive(false);
+            }
         }
         else
         {
             _objetableButton.SetActive(false);
         }
+        HideButtons();
     }
 
     public void ShowPersonaje()
