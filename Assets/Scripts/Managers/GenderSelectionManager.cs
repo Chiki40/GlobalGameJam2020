@@ -24,4 +24,9 @@ public class GenderSelectionManager : MonoBehaviour
     {
         SceneManager.LoadScene("Initial");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
