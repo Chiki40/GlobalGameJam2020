@@ -14,7 +14,6 @@ public class GenderSelectionManager : MonoBehaviour
     private Animator _fadeOutAnimator = null;    
     private void Start()
     {
-        UtilSound.instance.PlaySound("INTRIGANTE", 1.0f, true);
         StartCoroutine(PlaySoundCoroutine());
     }
 

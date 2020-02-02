@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +19,8 @@ public class PalizaMiniManager : MonoBehaviour
     private GameObject _levelSelection = null;
     [SerializeField]
     private ConversationManager _conversationManager = null;
+    [SerializeField]
+    private LocalizationManager _localizationManager = null;    
     public UnityEvent onPalizaEnd;
 
     private IEnumerator Start()
@@ -35,7 +38,13 @@ public class PalizaMiniManager : MonoBehaviour
             _yearBook.SetActive(true);
             _animator.enabled = true;
             _conversationManager.gameObject.SetActive(true);
-            _conversationManager.SetConversation(new List<string>(){"holasdfdsfdsfdsfdsfdsffdsfdsfdsfdsfsdfsdfsdfsdfsd", "pusdfsdfdsfsdftada"});
+
+            List<string> values = new List<string>();
+            Tuple<string, string> puzzle = new Tuple<string, string>("", "");
+            bool withPuzzle = false;
+            values.Add(_localizationManager.GetString("BeginText", ref puzzle, ref withPuzzle));
+            _conversationManager.SetConversation(values);
+
             onPalizaEnd.Invoke();
             yield return null;
             yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);

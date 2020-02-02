@@ -79,6 +79,7 @@ public class LiteratureManager : MonoBehaviour
 
         if (value.ToLower() == _genericManager.phrasesBoy[actualPhrase].puzzle.Item2.ToLower())
         {
+            _genericManager.EliminarGlich();
             if (_genericManager.isBoy)
             {
                 //la palabra esta bien
@@ -93,6 +94,10 @@ public class LiteratureManager : MonoBehaviour
                 _textOutput.text = texto;
                 ++_actualPalabrasCorrectas;
             }
+        }
+        else
+        {
+            _genericManager.CrearGlich();
         }
         _textInput.SetActive(false);
         _genericManager._conversationManager.Block(false);
