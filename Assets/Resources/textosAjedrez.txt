@@ -1,11 +1,11 @@
-jugador 1 - Mover esos peones parece lo más seguro
+jugador 1 - ¡Vaya, no sabía que era el día del novato!
 
-jugador 1 (solución) - ¡Ja! ¡Gané! Como debe ser...
+jugador 1 (solución) - ¡Maldición! ¿¡Cómo lo hiciste, repugnante cerebro de mosquito!?
 
-juagor 2 - Estás amurallado entre la espalda y la pared ¿eh? 
+juagor 2 - Tu rey está entre la espalda y la pared ¿eh? 
 
-jugador 2 (solución) - Obviamente. ¡Victoria!
+jugador 2 (solución) - ¡IMPOSIBLE! ¡Cómo pude bajar la retaguardia así!
 
-jugador 3 - ¡Vaya! Es difícil ver a un simple peón tan cerca de la realeza...
+jugador 3 - ¡Vaya! Esto sí que no me lo esperaba. ¡Pero se acabó tu suerte, PEÓN! A la reina no la ganarás.
 
-jugador 3 (solución) - ¿QUÉ? ¡NO! ¡He sido vencida con una jugada de novatos! Mi reino... ¡ME LAS PAGARÁS!
+jugador 3 (solución) - ¿QUÉ? ¿¡He sido vencida en una jugada de novatos!? ¡Mi reino por UN PEÓN! ¡ME LAS PAGARÁS!
