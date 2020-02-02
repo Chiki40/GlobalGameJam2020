@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChessClub : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ChessClub : MonoBehaviour
     public List<GameObject> _chessPreGame;
     public List<GameObject> _chessPostGame;
     public List<GameObject> _fondos;
+    public List<Sprite> _spritesFlores;
+    public Image _imageFlores;
 
     int currentLevel = 0;
     private int maxLevels = 3;
@@ -47,7 +50,8 @@ public class ChessClub : MonoBehaviour
     {
         onTextStart = true;
 
-        switch(level)
+        _imageFlores.sprite = _spritesFlores[currentLevel * 2];
+        switch (level)
         {
             case 0: ShowMessage(_genericManager.isBoy ? key1In_boy : key1In_girl); break;
             case 1: ShowMessage(_genericManager.isBoy ? key2In_boy : key2In_girl); break;
@@ -133,6 +137,7 @@ public class ChessClub : MonoBehaviour
         _fondos[0].SetActive(false);
         _fondos[1].SetActive(true);
 
+        _imageFlores.sprite = _spritesFlores[currentLevel * 2 + 1];
         switch (currentLevel)
         {
             case 0: ShowMessage(_genericManager.isBoy ? key1Out_boy : key1Out_girl); break;
