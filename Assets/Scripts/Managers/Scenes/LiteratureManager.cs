@@ -54,6 +54,7 @@ public class LiteratureManager : MonoBehaviour
         {
             _genericManager.OnLevelCompleted("EndText_1");
         }
+        _alphabetManager.resetAlphabet();
     }
 
     public void EndPartConversation()
@@ -66,6 +67,7 @@ public class LiteratureManager : MonoBehaviour
         {
             _genericManager._conversationManager.Block(true);
         }
+        _alphabetManager.resetAlphabet();
     }
 
     public void CheckPalabra()
