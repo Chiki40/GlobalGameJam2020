@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ public class WebcamToRenderTexture : MonoBehaviour
     private Material _newMaterial = null;    
     [SerializeField]
     private Renderer _renderer = null;
+    [SerializeField]
+    private ConversationManager _conversationManager = null;    
+    [SerializeField]
+    private LocalizationManager _localizationManager = null;    
     [SerializeField]
     private Vector3 _rotationAfterInit = Vector3.zero;
 
@@ -31,7 +36,17 @@ public class WebcamToRenderTexture : MonoBehaviour
         {
              Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _renderer not set");
             return;
-        }        
+        }
+        if (_conversationManager == null)
+        {
+             Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _conversationManager not set");
+            return;
+        }       
+        if (_localizationManager == null)
+        {
+             Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _localizationManager not set");
+            return;
+        }                 
         Application.RequestUserAuthorization(UserAuthorization.WebCam);
     }
 
@@ -45,6 +60,18 @@ public class WebcamToRenderTexture : MonoBehaviour
         _fadeOutAnimator.enabled = true;
         yield return null;
         yield return new WaitForSeconds(_fadeOutAnimator.GetCurrentAnimatorStateInfo(0).length);
+
+        _conversationManager.gameObject.SetActive(true);
+        List<string> values = new List<string>();
+        Tuple<string, string> puzzle = new Tuple<string, string>("", "");
+        bool withPuzzle = false;
+        values.Add(_localizationManager.GetString("Final_PostPaliza_1", ref puzzle, ref withPuzzle));
+        values.Add(_localizationManager.GetString("Final_PostPaliza_2", ref puzzle, ref withPuzzle));
+        _conversationManager.SetConversation(values);
+    }
+
+    public void OnConversationEnd()
+    {
         _mirrorCollider.enabled = true;
     }
 

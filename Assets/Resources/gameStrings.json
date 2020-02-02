@@ -23,7 +23,7 @@
 	"Text11_M": "¿Ni idea de lo que he dicho, verdad? Las mentes simples no se fijan que en mis frases está el número clave del cifrado del abecedario.",
 	"Literature_Hint":"Quizá el abecedario de ahí tenga algo que ver en su código secreto...",
 
-	
+
 	"StartText_1_M":"14 de marzo de 2020. 7:00 p.m. Club de Literatura.",
 	"StartText_1_F":"14 de marzo de 2020. 7:00 p.m. Club de Literatura.",
 	"StartText_2_M":"12 de marzo de 2020. 5:30 p.m. Club de Ajedrez.",
@@ -56,8 +56,10 @@
 
   "BeginText":"Aaaarg… Qué dolor. ¿Qué ha pasado? Mis recuerdos no tienen sentido.",
   "Final_AllLevels":"Así que eso fue lo que pasó… ",
-  "Final_PostPaliza_1":"aaarg… Qué dolor. Nunca pensé que acabaría con el cuerpo tan magullado. Y menos por esta gente.",
+  "Final_PostPaliza_1":"Aaarg… Qué dolor. Nunca pensé que acabaría con el cuerpo tan magullado. Y menos por esta gente.",
   "Final_PostPaliza_2":"Debería al menos lavarme la sangre de la cara. No puedo permitir que nadie me vea así.",
   "Final_PostCredits":"Todos hacemos daño… Incluso sin darnos cuenta."
+
+
 
 }

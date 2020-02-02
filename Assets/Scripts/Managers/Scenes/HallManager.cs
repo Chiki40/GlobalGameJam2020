@@ -71,7 +71,7 @@ public class HallManager : MonoBehaviour
         if (_genericManager.AllPistasConocidas())
         {
             int index = _genericManager._conversationManager.getCurrentPhraseIndex();
-            if (index >= 0 && index < 6)
+            if (index >= 0 && index <= 6)
             {
                 _objetableButton.SetActive(true);
             }
