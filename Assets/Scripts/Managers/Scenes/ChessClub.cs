@@ -115,6 +115,7 @@ public class ChessClub : MonoBehaviour
     {
         if (win)
         {
+            UtilSound.instance.PlaySound("chess");
             _chessPreGame[currentLevel].SetActive(false);
             _chessPostGame[currentLevel].SetActive(true);
             _genericManager.EliminarGlich();

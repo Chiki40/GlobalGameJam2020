@@ -1,0 +1,11 @@
+jugador 1 - Mover esos peones parece lo más seguro
+
+jugador 1 (solución) - ¡Ja! ¡Gané! Como debe ser...
+
+juagor 2 - Estás amurallado entre la espalda y la pared ¿eh? 
+
+jugador 2 (solución) - Obviamente. ¡Victoria!
+
+jugador 3 - ¡Vaya! Es difícil ver a un simple peón tan cerca de la realeza...
+
+jugador 3 (solución) - ¿QUÉ? ¡NO! ¡He sido vencida con una jugada de novatos! Mi reino... ¡ME LAS PAGARÁS!
