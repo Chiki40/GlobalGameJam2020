@@ -616,6 +616,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d3adf05762148aabc4aa99e367743a, type: 3}
+--- !u!114 &1902304094077850861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1902304094077850860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c1d85f17a924733ab193b21439c524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3518971346894048250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -692,56 +704,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: _yearBook
-      value: 
-      objectReference: {fileID: 131387124}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1003188430}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 947096901}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1490400866546582701, guid: e4d3adf05762148aabc4aa99e367743a,
-        type: 3}
-      propertyPath: m_Name
-      value: YearBook
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
-        type: 3}
-      propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,6 +753,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365462902773925068, guid: 02ba5acc3ff4d469c9f8707ae119c971,
+        type: 3}
+      propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1902304094077850861}
+    - target: {fileID: 5365462902773925069, guid: 02ba5acc3ff4d469c9f8707ae119c971,
+        type: 3}
+      propertyPath: m_Name
+      value: YearBook
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02ba5acc3ff4d469c9f8707ae119c971, type: 3}

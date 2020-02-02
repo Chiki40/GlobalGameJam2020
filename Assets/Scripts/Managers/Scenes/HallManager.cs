@@ -80,6 +80,7 @@ public class HallManager : MonoBehaviour
         {
             _objetableButton.SetActive(false);
         }
+        HideButtons();
     }
 
     public void ShowPersonaje()

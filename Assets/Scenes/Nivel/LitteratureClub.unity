@@ -3897,7 +3897,7 @@ PrefabInstance:
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
@@ -3988,6 +3988,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _postgameTime
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndConverdation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _endConversation.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
@@ -4526,7 +4546,6 @@ GameObject:
   - component: {fileID: 2094190752}
   - component: {fileID: 2094190753}
   - component: {fileID: 2094190755}
-  - component: {fileID: 2094190754}
   m_Layer: 0
   m_Name: Pista2
   m_TagString: Untagged
@@ -4702,21 +4721,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundName: paper
   _random: 0
---- !u!114 &2094190754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094190746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687fc193386c36e4289b7ba9a8d6d962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_glichImage: {fileID: 0}
-  m_fixedImage: {fileID: 0}
-  levelOfGlichToFix: 4
 --- !u!95 &2094190755
 Animator:
   serializedVersion: 3

@@ -68,6 +68,7 @@ public class PalizaMiniManager : MonoBehaviour
 
     public void YearBookPicked()
     {
+        _yearBook.GetComponent<ChangeMouse>().OnMouseExit();
         _yearBook.SetActive(false);
         _levelSelection.SetActive(true);
     }
