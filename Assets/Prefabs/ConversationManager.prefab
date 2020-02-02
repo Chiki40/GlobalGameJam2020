@@ -609,7 +609,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: bloste
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5779e9862af852844a874149ab3f724f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e9583f4dee6efbf4f877dc3ca26a3bc1, type: 2}
   m_sharedMaterial: {fileID: 1163137249365315097, guid: e025e5f38fb8ac548b86a8b8faf9eba7,
     type: 2}
   m_fontSharedMaterials: []
