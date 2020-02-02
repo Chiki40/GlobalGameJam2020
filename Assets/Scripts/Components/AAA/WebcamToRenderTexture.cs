@@ -5,6 +5,10 @@ using UnityEngine;
 public class WebcamToRenderTexture : MonoBehaviour
 {
     [SerializeField]
+    private Animator _fadeOutAnimator = null;
+    [SerializeField]
+    private Collider2D _mirrorCollider = null;
+    [SerializeField]
     private Material _newMaterial = null;    
     [SerializeField]
     private Renderer _renderer = null;
@@ -13,6 +17,11 @@ public class WebcamToRenderTexture : MonoBehaviour
 
     private void Awake()
     {
+        if (_mirrorCollider == null)
+        {
+             Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _mirrorCollider not set");
+            return;
+        }          
         if (_newMaterial == null)
         {
              Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _newMaterial not set");
@@ -28,6 +37,15 @@ public class WebcamToRenderTexture : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(InitialCoroutine());
+    }
+
+    private IEnumerator InitialCoroutine()
+    {
+        _fadeOutAnimator.enabled = true;
+        yield return null;
+        yield return new WaitForSeconds(_fadeOutAnimator.GetCurrentAnimatorStateInfo(0).length);
+        _mirrorCollider.enabled = true;
     }
 
     public void InitCam()
