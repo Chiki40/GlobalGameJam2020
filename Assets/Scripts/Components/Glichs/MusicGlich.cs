@@ -7,6 +7,8 @@ using UnityEngine;
 public class MusicGlich : IGlich
 {
     AudioSource m_audio;
+    public AudioSource m_glichAudio;
+    public AudioClip[] clips;
     [Range(1,10)]
     public float levelOfGlich;
     public bool m_enable;
@@ -42,6 +44,13 @@ public class MusicGlich : IGlich
                 }
                 m_audio.pitch = originalPitch;
                 int restart = UnityEngine.Random.Range(0, 100);
+                if (restart < levelOfGlich * 10)
+                {
+                    int index = UnityEngine.Random.Range(0, clips.Length);
+                    m_glichAudio.clip = clips[index];
+                    m_glichAudio.Play();
+                }
+                restart = UnityEngine.Random.Range(0, 100);
                 if (restart < levelOfGlich * 10)
                 {
                     m_audio.Stop();
