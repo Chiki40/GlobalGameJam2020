@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 775636711}
   - component: {fileID: 775636710}
   - component: {fileID: 775636714}
+  - component: {fileID: 775636715}
   m_Layer: 0
   m_Name: Pista1
   m_TagString: Untagged
@@ -734,6 +735,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &775636715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775636708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1cf4e9d5b724d2f847620b9fe647b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: item3
 --- !u!1 &849103575
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +827,7 @@ GameObject:
   - component: {fileID: 861746546}
   - component: {fileID: 861746545}
   - component: {fileID: 861746544}
+  - component: {fileID: 861746551}
   m_Layer: 0
   m_Name: Pista4
   m_TagString: Untagged
@@ -1036,6 +1051,19 @@ Transform:
   m_Father: {fileID: 545252799}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861746551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861746543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1cf4e9d5b724d2f847620b9fe647b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: item1
 --- !u!1 &868312958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1039920370186500882, guid: ee4a859316fef3f4fb9120dfffa5f1f0,
@@ -1271,6 +1299,7 @@ GameObject:
   - component: {fileID: 997165952}
   - component: {fileID: 997165951}
   - component: {fileID: 997165950}
+  - component: {fileID: 997165956}
   m_Layer: 0
   m_Name: Pista3
   m_TagString: Untagged
@@ -1494,6 +1523,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &997165956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997165948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1cf4e9d5b724d2f847620b9fe647b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: photo1
 --- !u!1001 &1078894888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2315,6 +2357,7 @@ GameObject:
   - component: {fileID: 2094190748}
   - component: {fileID: 2094190747}
   - component: {fileID: 2094190752}
+  - component: {fileID: 2094190753}
   m_Layer: 0
   m_Name: Pista2
   m_TagString: Untagged
@@ -2476,6 +2519,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2094190753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094190746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1cf4e9d5b724d2f847620b9fe647b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: paper
 --- !u!1 &2101254185
 GameObject:
   m_ObjectHideFlags: 0

@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353d47e3f1c4842c787ae938d8eb81d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeBetweenSounds: 10
 --- !u!1 &346367477753130260
 GameObject:
   m_ObjectHideFlags: 0

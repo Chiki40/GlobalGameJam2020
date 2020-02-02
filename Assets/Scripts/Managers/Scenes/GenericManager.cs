@@ -198,6 +198,11 @@ public class GenericManager : MonoBehaviour
     public void PistaConocida(int index)
     {
         _pistaConocida[index] = true;
+        ItemSound itemSound = _pistas[index].GetComponent<ItemSound>();
+        if (itemSound != null)
+        {
+            itemSound.PlaySound();
+        }
     }
 
     public bool AllPistasConocidas()
