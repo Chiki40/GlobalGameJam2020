@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PalizaMiniManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class PalizaMiniManager : MonoBehaviour
     private GameObject _levelSelection = null;
     [SerializeField]
     private ConversationManager _conversationManager = null;
+    public UnityEvent onPalizaEnd;
 
     private IEnumerator Start()
     {
@@ -36,6 +38,7 @@ public class PalizaMiniManager : MonoBehaviour
             yield return null;
             yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
             _blackScreen.gameObject.SetActive(false);
+            onPalizaEnd.Invoke();
         }
         else
         {
