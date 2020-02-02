@@ -47,13 +47,14 @@ public class HallManager : MonoBehaviour
             if (correctOption[ActualLevel] == index)
             {
                 ++actualCorrectas;
+                _genericManager.EliminarGlich();
             }
-            _genericManager.EliminarGlich();
+            else
+            {
+                _genericManager.CrearGlich();
+            }
         }
-        else
-        {
-            _genericManager.CrearGlich();
-        }
+        
         HideButtons();
 
         _objetableButton.SetActive(false);
