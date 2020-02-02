@@ -277,7 +277,7 @@ public class GenericManager : MonoBehaviour
     public void OnLevelCompleted(string stringKey)
     {
         _onLevelCompleted.Invoke();
-        UtilSound.instance.PlaySound("FINDECADAESCENA", 1, false);
+        //UtilSound.instance.PlaySound("FINDECADAESCENA", 1, false);
         StartCoroutine(OnLevelCompletedCoroutine(stringKey+ "_" + (isBoy ? "M" : "F")));
     }
 
