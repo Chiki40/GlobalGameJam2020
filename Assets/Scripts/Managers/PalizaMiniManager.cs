@@ -16,6 +16,7 @@ public class PalizaMiniManager : MonoBehaviour
 
     private IEnumerator Start()
     {
+        // First time
         if (GameController.GetInstance().GetLevelsCompleted() == 0)
         {       
             yield return new WaitForSeconds(1.0f);
@@ -30,6 +31,18 @@ public class PalizaMiniManager : MonoBehaviour
         }
         else
         {
+            // Disable completed levels
+            for (int i = 0; i < _levelSelection.transform.childCount; ++i)
+            {
+                LevelLoader levelLoader = _levelSelection.transform.GetChild(i).GetComponent<LevelLoader>();
+                if (levelLoader)
+                {
+                    if (GameController.GetInstance().HasCompletedLevel(levelLoader.sceneToLoad))
+                    {
+                        levelLoader.gameObject.SetActive(false);
+                    }
+                }
+            }
             _levelSelection.SetActive(true);
             _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         }
