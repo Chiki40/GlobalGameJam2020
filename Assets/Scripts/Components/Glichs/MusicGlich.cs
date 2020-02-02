@@ -47,7 +47,7 @@ public class MusicGlich : IGlich
                 if (restart < levelOfGlich * 10)
                 {
                     int index = UnityEngine.Random.Range(0, clips.Length);
-                    if(index >= clips.Length)
+                    if(index >= clips.Length && m_glichAudio)
                     {
                         m_glichAudio.clip = clips[index];
                         m_glichAudio.Play();
