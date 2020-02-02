@@ -33,6 +33,7 @@ public class GenericManager : MonoBehaviour
     public UnityEvent _endConversation;
     public UnityEvent _endPartConversation;
     public UnityEvent _showPersonaje;
+    public UnityEvent _onLevelCompleted;
 
     public List<GameObject> _objectsToDeactivate;
     public List<GameObject> _pistas;
@@ -275,6 +276,8 @@ public class GenericManager : MonoBehaviour
 
     public void OnLevelCompleted(string stringKey)
     {
+        _onLevelCompleted.Invoke();
+        UtilSound.instance.PlaySound("FINDECADAESCENA", 1, false);
         StartCoroutine(OnLevelCompletedCoroutine(stringKey+ "_" + (isBoy ? "M" : "F")));
     }
 
