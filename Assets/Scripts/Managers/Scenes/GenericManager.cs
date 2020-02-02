@@ -10,9 +10,17 @@ public class GenericManager : MonoBehaviour
     [SerializeField]
     private Animator _characterConversationAnimator = null;
     [SerializeField]
+    private Animator _pregameAnimator = null;
+    [SerializeField]
+    private Animator _pregameTextAnimator = null;        
+    [SerializeField]
+    private Text _pregameText = null;       
+    [SerializeField]
+    private float _pregameTime = 1.0f;      
+    [SerializeField]
     private Animator _postgameAnimator = null;
     [SerializeField]
-    private Animator _postgameTextAnimator = null;
+    private Animator _postgameTextAnimator = null;    
     [SerializeField]
     private Text _postgameText= null;       
     [SerializeField]
@@ -68,6 +76,18 @@ public class GenericManager : MonoBehaviour
             Debug.LogError("[GenericManager.Awake] ERROR: Serializable _postgameAnimator not set");
             return;
         }
+
+        if (_pregameTextAnimator == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _pregameTextAnimator not set");
+            return;
+        }
+
+        if (_pregameText == null)
+        {
+            Debug.LogError("[GenericManager.Awake] ERROR: Serializable _pregameText not set");
+            return;
+        }           
 
         if (_postgameTextAnimator == null)
         {
@@ -129,6 +149,28 @@ public class GenericManager : MonoBehaviour
     private void Start()
     {
         UtilSound.instance.StopAllSounds();
+    }
+
+    public void ShowPregame(string stringKey)
+    {
+        StartCoroutine(ShowPregameCoroutine(stringKey + "_" + (isBoy ? "M" : "F")));
+    }
+
+    private IEnumerator ShowPregameCoroutine(string stringKey)
+    {
+        Tuple<string, string> tuple = new Tuple<string, string>("", "");
+        bool withoutSpecialWords = false;
+        _pregameText.text = _localizationManager.GetString(stringKey, ref tuple, ref withoutSpecialWords);        
+        _pregameTextAnimator.enabled = true;
+        yield return null;
+        yield return new WaitForSeconds(_pregameTextAnimator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(_pregameTime);
+        _pregameTextAnimator.SetTrigger("out");
+        yield return null;
+        yield return new WaitForSeconds(_pregameTextAnimator.GetCurrentAnimatorStateInfo(0).length);
+        _pregameAnimator.SetTrigger("out");
+        yield return null;
+        yield return new WaitForSeconds(_pregameAnimator.GetCurrentAnimatorStateInfo(0).length / 2.0f);
         ShowMensaje();
     }
 
@@ -233,12 +275,13 @@ public class GenericManager : MonoBehaviour
 
     public void OnLevelCompleted(string stringKey)
     {
-        StartCoroutine(OnLevelCompletedCoroutine(stringKey));
+        StartCoroutine(OnLevelCompletedCoroutine(stringKey+ "_" + (isBoy ? "M" : "F")));
     }
 
     private IEnumerator OnLevelCompletedCoroutine(string stringKey)
    {
        _postgameAnimator.enabled = true;
+       yield return null;
        yield return new WaitForSeconds(_postgameAnimator.GetCurrentAnimatorStateInfo(0).length);
 
        Tuple<string, string> tuple = new Tuple<string, string>("", "");
@@ -246,6 +289,7 @@ public class GenericManager : MonoBehaviour
        _postgameText.text = _localizationManager.GetString(stringKey, ref tuple, ref withoutSpecialWords);
 
        _postgameTextAnimator.enabled = true;
+       yield return null;
        yield return new WaitForSeconds(_postgameTime);
        GameController.GetInstance().LevelCompleted();
    } 

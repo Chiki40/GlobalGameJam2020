@@ -3874,6 +3874,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6f368663d316c1742ab2c5a80b88ecf5, type: 2}
+    - target: {fileID: 7349486654492890856, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8166264534593633827, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8751283309066409409, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -3964,6 +3974,16 @@ PrefabInstance:
       propertyPath: _objectsToDeactivate.Array.data[4]
       value: 
       objectReference: {fileID: 861746543}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _pregameTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751283310157002112, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: _postgameTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8751283310157002113, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_LocalPosition.x
