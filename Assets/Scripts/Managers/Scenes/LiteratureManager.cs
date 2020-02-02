@@ -27,6 +27,23 @@ public class LiteratureManager : MonoBehaviour
         _actualPalabrasCorrectas = 0;
     }
 
+    public void EndConverdation()
+    {
+        List<Pharse> phrases = _genericManager.isBoy ? _genericManager.phrasesBoy : _genericManager.phrasesGirl;
+        int numPuzzlePhrases = 0;
+        for (int i = 0; i < phrases.Count; ++i)
+        {
+            if (phrases[i].withPuzzle)
+            {
+                ++numPuzzlePhrases;
+            }
+        }
+        if (_actualPalabrasCorrectas >= numPuzzlePhrases)
+        {
+            _genericManager.OnLevelCompleted("EndText_1");
+        }
+    }
+
     public void EndPartConversation()
     {
         _textInput.SetActive(false);
