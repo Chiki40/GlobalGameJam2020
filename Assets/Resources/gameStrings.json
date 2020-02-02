@@ -7,10 +7,10 @@
 	"Text6_F": "Y, si algo he aprendido entre todos los múltiples idiomas y lenguajes, incluso C SHARP; es que es ley de gu3rra que los vencedores traten a los vencidos a su <specialWord>DPWRMR<solution>ANTOJO</solution></specialWord>.",
 	"Text8_M": "Y no hay mayor <specialWord>DRFQRQCF<solution>PERDEDOR</solution></specialWord> que el que mis ret1n4s reflejan en este preciso instante.",
 	"Text8_F": "Y no hay mayor <specialWord>DRFQRQCFÑ/<solution>PERDEDORA</solution></specialWord> que la que mis ret1n4s reflejan en este preciso instante.",
-	"Text10_F": "¿Ni idea de lo que he dicho, verdad? Las mentes simples no se fijan que en mis frases está el número clave del cifrado del abecedario.",
-	"Text10_M": "¿Ni idea de lo que he dicho, verdad? Las mentes simples no se fijan que en mis frases está el número clave del cifrado del abecedario.",
-	"Text11_M": "Si echaras un vistazo a la habitación, quizá me entenderías. Pero no creo que te de por ahí. Y menos por tocar esecalentario.",
-	"Text11_F": "Si echaras un vistazo a la habitación, quizá me entenderías. Pero no creo que te de por ahí. Y menos por tocar esecalentario.",
+	"Text10_F": "¿Ni idea de lo que he dicho, verdad? Las mentes simples no se fijan que en mis frases está el número clave del cifrado del abecedario, tocándolo las veces que los números recitan.",
+	"Text10_M": "¿Ni idea de lo que he dicho, verdad? Las mentes simples no se fijan que en mis frases está el número clave del cifrado del abecedario, tocándolo las veces que los números recitan.",
+	"Text11_M": "Si echaras un vistazo a la habitación, quizá me entenderías. Pero no creo que te de por ahí. Y menos por tocar esos abedecedarios. El de arriba descifra lo que digo cifrado.",
+	"Text11_F": "Si echaras un vistazo a la habitación, quizá me entenderías. Pero no creo que te de por ahí. Y menos por tocar esos abedecedarios. El de arriba descifra lo que digo cifrado.",
 	"Literature_Hint": "Quizá el abecedario de ahí tenga algo que ver en su código secreto...",
 
 
@@ -36,18 +36,18 @@
 
 	"hall_1": "¡No me puedo creer aún toda la movida de la Spring Party! Rachel no debió irse tan pronto. ¡A las 19:00 nada menos!",
 	"hall_2": "Y Barry por los suelos dolorido de agujetas.",
-	"hall_3": "Esa córeo de Macarenale agotó para el resto de la noche.",
+	"hall_3": "Esa córeografía de Macarena le agotó para el resto de la noche.",
 	"hall_4": "¡Pero lo más de la noche fue el inesperadísimo beso entre Paolo y Mindy!",
 	"hall_5": "Un beso precioso ante los fuegos artificiales",
 	"hall_6": "Por no hablar del percance del pedazo pedo que se pilló Mónica.",
 	"hall_7": "¡Y esta gente que se puso a las 3 de la mañana a emporrarse mientras araban el campo! ¡Vaya hippis colgaos!",
-	"hall_8": "¿Todo esto es correcto según mis fuentes, no? Yo SIEMPRE me fio de de mi PRIMERA intuición.",
+	"hall_8": "¿Todo esto es correcto según mis fuentes, no? Yo SIEMPRE me fio de de mi PRIMERA intuición. ¿Debería yo de fiarme de tu PRIMERA intuición?",
 	"hall_fail": "Deberías comprobar al menos tus fuentes, ¿no crees?",
 
 	"BeginText": "Aaaarg… Qué dolor. ¿Qué ha pasado? Mis recuerdos no tienen sentido.",
 	"Final_AllLevels": "Así que eso fue lo que pasó… ",
 	"Final_PostPaliza_1": "Aaarg… Qué dolor. Nunca pensé que acabaría con el cuerpo tan magullado. Y menos por esta gente.",
-	"Final_PostPaliza_2": "Debería al menos lavarme la sangre de la cara. No puedo permitir que nadie me vea así.",
+	"Final_PostPaliza_2": "Debería al menos mirarme al espejo y lavarme la cara. No puedo permitir que nadie me vea así.",
 	"Final_PostCredits": "Todos hacemos daño… Incluso sin darnos cuenta."
 
 
