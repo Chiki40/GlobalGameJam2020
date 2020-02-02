@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df8474af84cb494e83cae8963314afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _newMaterial: {fileID: 2100000, guid: ccef0dc466fb246db8e7b779693fa78c, type: 2}
   _renderer: {fileID: 0}
+  _rotationAfterInit: {x: 90, y: -90, z: 90}
