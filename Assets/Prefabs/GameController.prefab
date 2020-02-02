@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b167cb90abce4a3385daf883eb356b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeToExitLevels: 3
   _levels:
   - LitteratureClub
   - ChessClub
+  - Hall

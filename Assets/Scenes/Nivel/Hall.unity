@@ -696,7 +696,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -712,6 +712,75 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1001 &62805280
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 573.73584
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 327.36884
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.8743906
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 988706129418963835, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872833957142690878, guid: ed99109fd1a8c43eaa35cd9b2315cea3,
+        type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed99109fd1a8c43eaa35cd9b2315cea3, type: 3}
 --- !u!1 &112747576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1960,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613148503}
   - component: {fileID: 613148502}
+  - component: {fileID: 613148504}
   m_Layer: 0
   m_Name: GlichPersonaje
   m_TagString: Untagged
@@ -1940,6 +2010,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613148504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613148501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53b157a94893ec44beb07942274061e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displacement: 10
+  displamentInX: 1
+  displamentInY: 0
+  m_enabled: 0
+  m_transform: {fileID: 613148503}
+  amountOfGlich: 2
 --- !u!224 &614345751 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5312066187895359325, guid: 31135c470043b5d498604894b0dc5ca3,
@@ -2868,7 +2956,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3451,7 +3539,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3679,7 +3767,7 @@ PrefabInstance:
     - target: {fileID: 1746659649821788678, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_gliches.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1746659649821788678, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
@@ -3695,12 +3783,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_gliches.Array.data[2]
       value: 
-      objectReference: {fileID: 798839989}
+      objectReference: {fileID: 613148504}
     - target: {fileID: 1746659649821788678, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_gliches.Array.data[3]
       value: 
+      objectReference: {fileID: 798839989}
+    - target: {fileID: 1746659649821788678, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_gliches.Array.data[4]
+      value: 
       objectReference: {fileID: 2105397497}
+    - target: {fileID: 1746659649821788678, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_gliches.Array.data[5]
+      value: 
+      objectReference: {fileID: 2105397499}
     - target: {fileID: 4043564066906065136, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
       propertyPath: m_IsActive
@@ -3710,6 +3808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5425550928592260868, guid: 31135c470043b5d498604894b0dc5ca3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7778390222141820387, guid: 31135c470043b5d498604894b0dc5ca3,
         type: 3}
@@ -4274,7 +4377,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4460,7 +4563,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4707,7 +4810,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5095,6 +5198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2105397498}
   - component: {fileID: 2105397497}
+  - component: {fileID: 2105397499}
   m_Layer: 0
   m_Name: GlichCartel
   m_TagString: Untagged
@@ -5134,3 +5238,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2105397499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105397496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c01df9109308b244bae9182ca140b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  m_transform: {fileID: 2105397498}
+  scaleInX: 1
+  maxScaleInX: 10
+  scaleInY: 0
+  maxScaleInY: 10

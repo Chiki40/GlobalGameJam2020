@@ -84,7 +84,7 @@ public class HallManager : MonoBehaviour
     {
         if (actualCorrectas >= maxLevels)
         {
-            Debug.Log("ya he acabado el nivel");
+            _genericManager.OnLevelCompleted("EndText_3");
         }
     }
 
