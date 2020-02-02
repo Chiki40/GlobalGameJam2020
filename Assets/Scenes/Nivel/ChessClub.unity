@@ -3547,7 +3547,7 @@ SpriteRenderer:
   m_Size: {x: 2.55, y: 0.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1161101167
@@ -4541,6 +4541,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3a39688f356560343b8f849f33e12aa8, type: 3}
+    - target: {fileID: 6602990547433583569, guid: 8e55928fa95a4564695b8bfd13dddffe,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6602990547433583574, guid: 8e55928fa95a4564695b8bfd13dddffe,
         type: 3}
       propertyPath: m_LocalPosition.x
