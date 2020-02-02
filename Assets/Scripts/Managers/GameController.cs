@@ -99,7 +99,7 @@ public class GameController : MonoBehaviour
     private IEnumerator WonCoroutine()
     {
         yield return new WaitForSeconds(_timeToExitLevels);
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Final Scene");
     }
 
     private IEnumerator LostCoroutine()

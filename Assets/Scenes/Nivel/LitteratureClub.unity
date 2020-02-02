@@ -4085,6 +4085,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65026cd6400851640becc24cbdc4bd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1927608570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1927608572}
+  - component: {fileID: 1927608571}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1927608571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927608570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4bdfdca5495214db5bed349a4d9a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: 31cabe7414f14064e87f65e4501e8fbe, type: 3}
+--- !u!4 &1927608572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927608570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.59, y: 1.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942791018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,6 +4552,8 @@ GameObject:
   - component: {fileID: 2094190747}
   - component: {fileID: 2094190752}
   - component: {fileID: 2094190753}
+  - component: {fileID: 2094190755}
+  - component: {fileID: 2094190754}
   m_Layer: 0
   m_Name: Pista2
   m_TagString: Untagged
@@ -4683,6 +4729,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundName: paper
   _random: 0
+--- !u!114 &2094190754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094190746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687fc193386c36e4289b7ba9a8d6d962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_glichImage: {fileID: 0}
+  m_fixedImage: {fileID: 0}
+  levelOfGlichToFix: 4
+--- !u!95 &2094190755
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094190746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2101254185
 GameObject:
   m_ObjectHideFlags: 0
