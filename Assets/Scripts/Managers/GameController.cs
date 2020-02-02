@@ -48,11 +48,8 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void LevelCompleted()
+    public int GetLevelsCompleted()
     {
-        _completedLevels[_currentLevel] = true;
-        _currentLevel = null;
-
         int levelsCompleted = 0;
         foreach(KeyValuePair<string, bool> pair in _completedLevels)
         {
@@ -61,6 +58,20 @@ public class GameController : MonoBehaviour
                 ++levelsCompleted;
             }
         }
+        return levelsCompleted;
+    }
+
+    public bool HasCompletedLevel(string level)
+    {
+        return _completedLevels[level];
+    }
+
+    public void LevelCompleted()
+    {
+        _completedLevels[_currentLevel] = true;
+        _currentLevel = null;
+
+        int levelsCompleted = GetLevelsCompleted();
         if (levelsCompleted >= _levels.Length)
         {
             Victory();
