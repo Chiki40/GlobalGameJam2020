@@ -49,4 +49,5 @@ MonoBehaviour:
   _renderer: {fileID: 0}
   _conversationManager: {fileID: 0}
   _localizationManager: {fileID: 0}
+  _credits: {fileID: 0}
   _rotationAfterInit: {x: 90, y: -90, z: 90}

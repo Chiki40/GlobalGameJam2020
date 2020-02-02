@@ -16,7 +16,9 @@ public class WebcamToRenderTexture : MonoBehaviour
     [SerializeField]
     private ConversationManager _conversationManager = null;    
     [SerializeField]
-    private LocalizationManager _localizationManager = null;    
+    private LocalizationManager _localizationManager = null;
+    [SerializeField]
+    private Credits _credits = null;        
     [SerializeField]
     private Vector3 _rotationAfterInit = Vector3.zero;
 
@@ -46,7 +48,12 @@ public class WebcamToRenderTexture : MonoBehaviour
         {
              Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _localizationManager not set");
             return;
-        }                 
+        }    
+        if (_credits == null)
+        {
+             Debug.LogError("[WebcamToRenderTexture.Awake] ERROR: Serializable _credits not set");
+            return;
+        }                        
         Application.RequestUserAuthorization(UserAuthorization.WebCam);
     }
 
@@ -82,5 +89,6 @@ public class WebcamToRenderTexture : MonoBehaviour
         _renderer.material.mainTexture = webcamTexture;
         _renderer.gameObject.transform.localEulerAngles = _rotationAfterInit;
         webcamTexture.Play();
+        _credits.enabled = true;
     }
 }
