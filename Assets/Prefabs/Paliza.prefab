@@ -197,7 +197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07247917, y: 0.28184494}
   m_AnchorMax: {x: 0.8526098, y: 0.73600006}
-  m_AnchoredPosition: {x: -0.27001953, y: 2.1999817}
+  m_AnchoredPosition: {x: -0.27001953, y: 2.2000122}
   m_SizeDelta: {x: -0.2800007, y: 4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1418944945
@@ -228,8 +228,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: bloste
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e025e5f38fb8ac548b86a8b8faf9eba7, type: 2}
-  m_sharedMaterial: {fileID: 1163137249365315097, guid: e025e5f38fb8ac548b86a8b8faf9eba7,
+  m_fontAsset: {fileID: 11400000, guid: 5779e9862af852844a874149ab3f724f, type: 2}
+  m_sharedMaterial: {fileID: 1413769831544480777, guid: 5779e9862af852844a874149ab3f724f,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -255,10 +255,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36.5
-  m_fontSizeBase: 50
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 20
   m_fontSizeMax: 50
   m_fontStyle: 0
@@ -353,7 +353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8526098, y: 0.209}
   m_AnchorMax: {x: 0.93639594, y: 0.5}
-  m_AnchoredPosition: {x: 0.2999878, y: -2.5}
+  m_AnchoredPosition: {x: 0.29992676, y: -2.5}
   m_SizeDelta: {x: 0.5999985, y: -3.000122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915927471
@@ -659,6 +659,7 @@ MonoBehaviour:
   _yearBookCollider: {fileID: 0}
   _levelSelection: {fileID: 0}
   _conversationManager: {fileID: 2083624201264237523}
+  _localizationManager: {fileID: 0}
   onPalizaEnd:
     m_PersistentCalls:
       m_Calls:
@@ -883,7 +884,7 @@ MonoBehaviour:
   _dialogTextBox: {fileID: 6484289352051992028}
   _dialogText: {fileID: 1418944944}
   _nextButton: {fileID: 1915927469}
-  _timeBetweenShownChars: 0.025
+  _timeBetweenShownChars: 0.012
   _endCallback:
     m_PersistentCalls:
       m_Calls:

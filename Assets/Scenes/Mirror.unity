@@ -1264,7 +1264,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: bloste
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e025e5f38fb8ac548b86a8b8faf9eba7, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5779e9862af852844a874149ab3f724f, type: 2}
   m_sharedMaterial: {fileID: 1163137249365315097, guid: e025e5f38fb8ac548b86a8b8faf9eba7,
     type: 2}
   m_fontSharedMaterials: []
@@ -1291,10 +1291,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 36.5
-  m_fontSizeBase: 50
+  m_fontSize: 23.6
+  m_fontSizeBase: 23.6
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 20
   m_fontSizeMax: 50
   m_fontStyle: 0
@@ -1343,7 +1343,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   _dialogTextBox: {fileID: 4593644609028533220}
   _dialogText: {fileID: 7368792377239269256}
   _nextButton: {fileID: 7368792376658245013}
-  _timeBetweenShownChars: 0.025
+  _timeBetweenShownChars: 0.012
   _endCallback:
     m_PersistentCalls:
       m_Calls:
