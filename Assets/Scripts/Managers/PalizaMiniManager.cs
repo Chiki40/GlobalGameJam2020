@@ -11,6 +11,8 @@ public class PalizaMiniManager : MonoBehaviour
     private Image _blackScreen = null;
     [SerializeField]
     private GameObject _yearBook = null;
+    [SerializeField]
+    private GameObject _levelSelection = null;    
 
     private IEnumerator Start()
     {
@@ -28,12 +30,14 @@ public class PalizaMiniManager : MonoBehaviour
         }
         else
         {
+            _levelSelection.SetActive(true);
             _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         }
     }
 
     public void YearBookPicked()
     {
-
+        _yearBook.SetActive(false);
+        _levelSelection.SetActive(true);
     }
 }
