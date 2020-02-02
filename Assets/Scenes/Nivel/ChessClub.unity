@@ -2868,30 +2868,12 @@ MonoBehaviour:
   - {fileID: 727455470}
   - {fileID: 439578759}
   - {fileID: 835968094}
-  key1In_boy:
-  - Text1_M
-  key1Out_boy:
-  - Text1_M
-  key2In_boy:
-  - Text1_M
-  key2Out_boy:
-  - Text1_M
-  key3In_boy:
-  - Text1_M
-  key3Out_boy:
-  - Text1_M
-  key1In_girl:
-  - Text1_M
-  key1Out_girl:
-  - Text1_M
-  key2In_girl:
-  - Text1_M
-  key2Out_girl:
-  - Text1_M
-  key3In_girl:
-  - Text1_M
-  key3Out_girl:
-  - Text1_M
+  key1In: chess_1_in
+  key1Out: chess_1_out
+  key2In: chess_2_in
+  key2Out: chess_2_out
+  key3In: chess_3_in
+  key3Out: chess_3_out
 --- !u!4 &849103577
 Transform:
   m_ObjectHideFlags: 0

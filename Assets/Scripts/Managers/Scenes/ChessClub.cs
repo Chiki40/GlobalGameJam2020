@@ -21,19 +21,12 @@ public class ChessClub : MonoBehaviour
     public List<GameObject> objetosCambioOn;
     public List<GameObject> objetosCambioOff;
 
-    public List<string> key1In_boy;
-    public List<string> key1Out_boy;
-    public List<string> key2In_boy;
-    public List<string> key2Out_boy;
-    public List<string> key3In_boy;
-    public List<string> key3Out_boy;
-
-    public List<string> key1In_girl;
-    public List<string> key1Out_girl;
-    public List<string> key2In_girl;
-    public List<string> key2Out_girl;
-    public List<string> key3In_girl;
-    public List<string> key3Out_girl;
+    public string key1In;
+    public string key1Out;
+    public string key2In;
+    public string key2Out;
+    public string key3In;
+    public string key3Out;
 
     private bool onTextStart = false;
     private bool onTextEnd = false;
@@ -51,12 +44,14 @@ public class ChessClub : MonoBehaviour
         onTextStart = true;
 
         _imageFlores.sprite = _spritesFlores[currentLevel * 2];
+        List<string> txt = new List<string>();
         switch (level)
         {
-            case 0: ShowMessage(_genericManager.isBoy ? key1In_boy : key1In_girl); break;
-            case 1: ShowMessage(_genericManager.isBoy ? key2In_boy : key2In_girl); break;
-            case 2: ShowMessage(_genericManager.isBoy ? key3In_boy : key3In_girl); break;
+            case 0: txt.Add( key1In); break;
+            case 1: txt.Add( key2In); break;
+            case 2: txt.Add( key3In); break;
         }
+        ShowMessage(txt);
 
         for (int i = 0; i < _clickableComponents.Count; ++i)
         {
@@ -139,12 +134,14 @@ public class ChessClub : MonoBehaviour
         _fondos[1].SetActive(true);
 
         _imageFlores.sprite = _spritesFlores[currentLevel * 2 + 1];
+        List<string> txt = new List<string>();
         switch (currentLevel)
         {
-            case 0: ShowMessage(_genericManager.isBoy ? key1Out_boy : key1Out_girl); break;
-            case 1: ShowMessage(_genericManager.isBoy ? key2Out_boy : key2Out_girl); break;
-            case 2: ShowMessage(_genericManager.isBoy ? key3Out_boy : key3Out_girl); break;
+            case 0: txt.Add(key1Out); break;
+            case 1: txt.Add(key2Out); break;
+            case 2: txt.Add(key3Out); break;
         }
+        ShowMessage(txt);
     }
 
     void ShowMessage(List<string> keys)
