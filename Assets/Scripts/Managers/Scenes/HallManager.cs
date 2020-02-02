@@ -75,6 +75,10 @@ public class HallManager : MonoBehaviour
             {
                 _objetableButton.SetActive(true);
             }
+            else
+            {
+                _objetableButton.SetActive(false);
+            }
         }
         else
         {
