@@ -17,6 +17,11 @@ public class TitleScreenManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             GoToNextScene();
