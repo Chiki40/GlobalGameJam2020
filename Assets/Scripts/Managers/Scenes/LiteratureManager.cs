@@ -18,6 +18,7 @@ public class LiteratureManager : MonoBehaviour
     public GenericManager _genericManager;
     public TMPro.TextMeshProUGUI _textOutput;
     public GameObject _textInput;
+    public AlphabetManager _alphabetManager;
     private bool inputAllreadyShow = false;
     private int _actualPalabrasCorrectas = 0;
 
@@ -25,6 +26,12 @@ public class LiteratureManager : MonoBehaviour
     {
         //_genericManager.ShowMensaje();
         _actualPalabrasCorrectas = 0;
+
+        if(_genericManager.AllPistasConocidas())
+        {
+            _alphabetManager.isClickable = true;
+        }
+
     }
 
     public void EndConverdation()
@@ -50,7 +57,7 @@ public class LiteratureManager : MonoBehaviour
         inputAllreadyShow = false;
         int actualPhrase = _genericManager._conversationManager.getCurrentPhraseIndex();
         Pharse phrase = _genericManager.isBoy ? _genericManager.phrasesBoy[actualPhrase] : _genericManager.phrasesGirl[actualPhrase];
-        if (phrase.withPuzzle)
+        if (phrase.withPuzzle && _genericManager.AllPistasConocidas())
         {
             _genericManager._conversationManager.Block(true);
         }
@@ -90,7 +97,7 @@ public class LiteratureManager : MonoBehaviour
         if (!inputAllreadyShow)
         {
             Pharse phrase = _genericManager.isBoy ? _genericManager.phrasesBoy[actualPhrase] : _genericManager.phrasesGirl[actualPhrase];
-            if (phrase.withPuzzle)
+            if (phrase.withPuzzle && _genericManager.AllPistasConocidas())
             {
                 _textInput.SetActive(true);
                 _textInput.GetComponent<InputField>().text = "";

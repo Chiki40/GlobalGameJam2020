@@ -24,6 +24,14 @@
 	"EndText_2_M":"Este cuento se ha acabado",
 	"EndText_2_F":"Este cuento se ha acabado",
 	"EndText_3_F":"...y no hemos reparado en gastos.",
-	"EndText_3_M":"...y no hemos reparado en gastos."
+	"EndText_3_M":"...y no hemos reparado en gastos.",
+
+	"chess_1_in":"Mover esos peones parece lo más seguro",
+	"chess_1_out":"¡Ja! ¡Gané! Como debe ser...",
+	"chess_2_in":"Estás amurallado entre la espalda y la pared ¿eh?",
+	"chess_2_out":"(solución) - Obviamente. ¡Victoria!",
+	"chess_3_in":"¡Vaya! Es difícil ver a un simple peón tan cerca de la realeza...",
+	"chess_3_out":"¿QUÉ? ¡NO! ¡He sido vencida con una jugada de novatos! Mi reino... ¡ME LAS PAGARÁS!"
+	
 
 }
