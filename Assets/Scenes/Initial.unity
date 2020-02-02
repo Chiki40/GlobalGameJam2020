@@ -133,8 +133,6 @@ BoxCollider2D:
     type: 3}
   m_PrefabInstance: {fileID: 5365462902662007353}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
   m_GameObject: {fileID: 131387124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.21, z: 0}
@@ -223,7 +221,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6602990547433583575, guid: 8e55928fa95a4564695b8bfd13dddffe, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8e55928fa95a4564695b8bfd13dddffe, type: 3}
->>>>>>> ca156047d22dab0b9feaa493542101c91b656931
 --- !u!1001 &505974705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -628,12 +625,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365462902773925057, guid: 02ba5acc3ff4d469c9f8707ae119c971,
         type: 3}
-<<<<<<< HEAD
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5365462902773925068, guid: 02ba5acc3ff4d469c9f8707ae119c971,
-=======
       propertyPath: onPalizaEnd.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -643,14 +634,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 131387124}
     - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
->>>>>>> ca156047d22dab0b9feaa493542101c91b656931
         type: 3}
       propertyPath: OnMouseUpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 1490400868273653756}
-    - target: {fileID: 5365462902773925069, guid: 02ba5acc3ff4d469c9f8707ae119c971,
-=======
       objectReference: {fileID: 1003188430}
     - target: {fileID: 1490400866546582700, guid: e4d3adf05762148aabc4aa99e367743a,
         type: 3}
@@ -683,7 +669,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1490400866546582701, guid: e4d3adf05762148aabc4aa99e367743a,
->>>>>>> ca156047d22dab0b9feaa493542101c91b656931
         type: 3}
       propertyPath: m_Name
       value: YearBook
