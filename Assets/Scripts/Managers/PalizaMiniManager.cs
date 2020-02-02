@@ -34,11 +34,11 @@ public class PalizaMiniManager : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
             _yearBook.SetActive(true);
             _animator.enabled = true;
-            _conversationManager.SetConversation(new List<string>(){"hola", "putada"});
+            _conversationManager.SetConversation(new List<string>(){"holasdfdsfdsfdsfdsfdsffdsfdsfdsfdsfsdfsdfsdfsdfsd", "pusdfsdfdsfsdftada"});
+            onPalizaEnd.Invoke();
             yield return null;
             yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
             _blackScreen.gameObject.SetActive(false);
-            onPalizaEnd.Invoke();
         }
         else
         {
