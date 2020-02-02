@@ -12,7 +12,11 @@ public class PalizaMiniManager : MonoBehaviour
     [SerializeField]
     private GameObject _yearBook = null;
     [SerializeField]
-    private GameObject _levelSelection = null;    
+    private Collider2D _yearBookCollider = null;    
+    [SerializeField]
+    private GameObject _levelSelection = null;
+    [SerializeField]
+    private ConversationManager _conversationManager = null;
 
     private IEnumerator Start()
     {
@@ -28,6 +32,10 @@ public class PalizaMiniManager : MonoBehaviour
             yield return new WaitForSeconds(5.0f);
             _yearBook.SetActive(true);
             _animator.enabled = true;
+            _conversationManager.SetConversation(new List<string>(){"hola", "putada"});
+            yield return null;
+            yield return new WaitForSeconds(_animator.GetCurrentAnimatorStateInfo(0).length);
+            _blackScreen.gameObject.SetActive(false);
         }
         else
         {
@@ -48,6 +56,11 @@ public class PalizaMiniManager : MonoBehaviour
             _levelSelection.SetActive(true);
             _blackScreen.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         }
+    }
+
+    public void MonologueEnd()
+    {
+        _yearBookCollider.enabled = true;
     }
 
     public void YearBookPicked()
